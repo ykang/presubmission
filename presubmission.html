@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Events in turbulence time series</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Events in turbulence time series">
+  <meta name="author" content="Yanfei Kang">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Events in turbulence time series</h1>
+    <h2>Presubmission review seminar</h2>
+    <p>Yanfei Kang<br/>Supervised by Prof. Kate Smith-Miles and Dr. Danijel Belusic</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:#f5f5ae;">
+  <hgroup>
+    <h2>Introduction</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>- Motivation</h3>
+
+<h3>- Difficulties</h3>
+
+<h3>- Objectives</h3>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Motivation</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/chunk0.pdf" title="plot of chunk chunk0" alt="plot of chunk chunk0" style="display: block; margin: auto;" /></p>
+
+<ul>
+<li><p>Event <u>detection</u>, <u>classification</u> and <u>interpretation</u> in  turbulence time series.</p>
+
+<ul>
+<li>Location?</li>
+<li>Similar?</li>
+<li>Physical mechanisms?</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Difficulties</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Red noise</li>
+<li>Varibility of spatial and temporal scales.</li>
+<li>Previously unknown.</li>
+<li>Small amount of literature.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Objectives</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol class = "build incremental">
+<li>Develop a method to detect and classify events:
+
+<ul>
+<li>does not require any pre-assumptions of events.</li>
+<li>deal with high noise.</li>
+<li>not limited by  stability or scales. </li>
+</ul></li>
+<li>Application of the method on a well-known dataset
+
+<ul>
+<li>also a validation of the method.</li>
+</ul></li>
+<li>Use the method to
+
+<ul>
+<li>detect events in the unknown stable atmospheric boundary layer (ABL).</li>
+<li>find  physical  dynamics of different types of events.</li>
+<li>study the effects of the event to the turbulence flows.<br></li>
+</ul></li>
+<li>Develop a statistical tool and make it easy to use for others.</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>The journey</h2>
+  </hgroup>
+  <article data-timings="">
+    <div align="center">
+<img src="timeline.pdf" height="500" width="1000">
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:#f5f5ae;">
+  <hgroup>
+    <h2>Chapter 2</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><p>Kang Y (2012).
+&ldquo;Real-time change detection in time series based on growing feature quantization.&rdquo;
+In <EM>Proceedings of the 2012 International Joint Conference on Neural Networks (IJCNN)</EM>, pp. 1&ndash;6.
+IEEE.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:#f5f5ae;">
+  <hgroup>
+    <h2>Chapter 3</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><p>Kang Y, Belusic D and Smith-Miles K (2014).
+&ldquo;A note on the relationship between turbulent coherent structures and phase correlation (Resubmitted after revision).&rdquo;
+<EM>Chaos: An Interdisciplinary Journal of Nonlinear Science</EM>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:#f5f5ae;">
+  <hgroup>
+    <h2>Chapter 3</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><p>Kang Y, Belusic D and Smith-Miles K (2014).
+&ldquo;A note on the relationship between turbulent coherent structures and phase correlation (Resubmitted after revision).&rdquo;
+<EM>Chaos: An Interdisciplinary Journal of Nonlinear Science</EM>.</p>
+
+<h2>What are events? Characteristics?</h2>
+
+<h3>Coherent structures</h3>
+
+<ul>
+<li><p>A typical type of events</p></li>
+<li><p>Generally used assumption: phase correlation</p></li>
+<li><p>Really? Can we use that to detect events?</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Not really! Why?</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Coherent structures detected using wavelets method</li>
+<li>Measure their phase correlation.</li>
+<li>How? Using surrogates.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Surrogates of \(x_O(t)\)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol class = "build incremental">
+<li><p>phase randomized surrogate \(x_R(t)\)</p>
+
+<ul>
+<li>take the Fourier Transform of \(x_O(t)\).</li>
+<li>randomize phase information while keeping the magnitude.</li>
+<li>do inverse Fourier Transform to get back to time domain to get \(x_R(t)\).</li>
+<li>none phase correlation.</li>
+</ul></li>
+<li><p>completely coherent surrogate \(x_C(t)\)</p>
+
+<ul>
+<li>obtained by making the phases constant.</li>
+<li>largest phase correlation</li>
+</ul></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>Measure of phase correlation I</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Coherece index (\(CI\))</h3>
+
+<p>Given \(x_O(t)\), \(x_R(t)\) and \(x_C(t)\),</p>
+
+<p>\[CI(q,\tau)=\left(\frac{|S_O(q,\tau)-S_R(q,\tau)|}{|S_O(q,\tau-S_R(q,\tau))|+|S_O(q,\tau)-S_C(q,\tau)|}\right)^{1/q},\]
+where \(S_i(q,\tau)\) is the $q$th order structure function: \(S_i(q,\tau)=\left<|x_i(t+\tau)-x_i(t)|^q\right>\), \(i \in \{O, R, C\}\) and \(\tau\) is the time lag.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>Measure of phase correlation II</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Nonlinearity Measure Based on Nonlinear Prediction Error (\(nm_{npe}\))</h3>
+
+<p>\[
+X=
+  \begin{bmatrix}
+    x(1) & x(2) & \cdots & x(m) \\
+    x(2) & x(3) & \cdots & x(m+1) \\
+    \cdots & \cdots & \cdots & \cdots \\
+    x(n-m+1) & x(n-m+2) & \cdots & x(n) \\
+  \end{bmatrix}
+\] </p>
+
+<p>For each row (delay vector) of \(X\), its \(k\) nearest \(m\)-dimensional delay vectors are found using Euclidean distances. If the \(k\) nearest delay vectors for  \(\vec{x}_i\) are \(\vec{x}_{j_p}\), \(p=1, 2, \cdots, k\), the nonlinear prediction error for the time series \(x(t)\) is defined as 
+\[
+\tau_X(m, k)= \sum\limits_{i=1}^{n-m}\left(x(i+m) - \frac{1}{k}\sum\limits_{p=1}^k x(j_p+m)\right)^2.
+\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>Measure of phase correlation II</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Nonlinearity Measure Based on Nonlinear Prediction Error (\(nm_{npe}\))</h3>
+
+<p>\[
+nm_{npe}=\frac{\bar{\tau}_R-\tau_X}{3\sigma_{R}},
+\]
+where \(\tau_X\) is the nonlinear prediction error of the original data, while \(\bar{\tau}_R\) and \(\sigma_R\) are the mean and standard deviation of the nonlinear prediction errors of the surrogates. </p>
+
+<p>\[
+\begin{aligned}
+& \\
+&x(t) \text{ is } \begin{cases}
+  \text{phase-correlated,} & \text{if } nm_{npe} \geq 1, \\
+  \text{phase-uncorrelated,} & \text{otherwise}.
+\end{cases}
+\end{aligned}
+\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h2>Results</h2>
+  </hgroup>
+  <article data-timings="">
+    <div align="center">
+<img src="hist.pdf" width=800, height=400>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>Conclusion</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul class = "build incremental">
+<li><p>the space and time organized structures in turbulent flow do not necessarily have correlated phases.</p></li>
+<li><p>quantitative way of event description difficult.</p></li>
+<li><p>then?</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-16" style="background:#f5f5ae;">
+  <hgroup>
+    <h2>Chapter 4</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><p>Kang Y, Smith-Miles K and Belusic D (2013).
+&ldquo;How to extract meaningful shapes from noisy time-series subsequences?&rdquo;
+In <EM>Proceedings of the 2013 IEEE Symposium on Computational Intelligence and Data Mining (CIDM)</EM>, pp. 65-72.
+IEEE.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-17" style="background:#f5f5ae;">
+  <hgroup>
+    <h2>Chapter 4</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><p>Kang Y, Smith-Miles K and Belusic D (2013).
+&ldquo;How to extract meaningful shapes from noisy time-series subsequences?&rdquo;
+In <EM>Proceedings of the 2013 IEEE Symposium on Computational Intelligence and Data Mining (CIDM)</EM>, pp. 65-72.
+IEEE.</p>
+
+<h2>Focus shifted</h2>
+
+<p><div align='center'>
+<img src='shift.pdf',width=1000,height=500>
+<div></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-18" style="background:;">
+  <hgroup>
+    <h2>Artificial time series</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/chunk1.pdf" title="plot of chunk chunk1" alt="plot of chunk chunk1" style="display: block; margin: auto;" /></p>
+
+<p><img src="assets/fig/chunk2.pdf" title="plot of chunk chunk2" alt="plot of chunk chunk2" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-19" style="background:;">
+  <hgroup>
+    <h2>Methodology: two steps</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>Detect events.</p></li>
+<li><p>Cluster the detected events.</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-20" style="background:;">
+  <hgroup>
+    <h2>$1$st step: event detection</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>Perform  noise test on each subsequence.</p>
+
+<ul class = "build incremental">
+<li><p>Why? Only care the non-noise subsequences.</p></li>
+<li><p>Then given a window length,  for the $q$th subsequence, get \(p\)-value \(p_q\). For \(x(t)\),  a \(p\)-value series:  \(p_1,p_2,\cdots,p_{m-w+1}\).</p></li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h2>\(p\)-value series for the artificial data</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><center></p>
+
+<h4>Sliding window length: \(w=128\)</h4>
+
+<p></center>
+<img src="assets/fig/chunk4.pdf" title="plot of chunk chunk4" alt="plot of chunk chunk4" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-22" style="background:;">
+  <hgroup>
+    <h2>How to define events?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/chunk4_1.pdf" title="plot of chunk chunk4_1" alt="plot of chunk chunk4_1" style="display: block; margin: auto;" /></p>
+
+<ul>
+<li><p><span style=" border: 1px solid red;"><em>A potential event</em></span> is a subsequence whose noise test \(p\) value is smaller than a predefined significant level \(\alpha\) (\(\alpha=0.05\)).</p></li>
+<li><p>Assume there exists a consecutive sequence of \(p\) values \(p_s,p_{s+1},\cdots,p_t\) which satisfies: </p>
+
+<ul>
+<li>\(p_i\leq \alpha, i=s, s+1, \cdots, t\)</li>
+<li>\(t-s\geq w/2\) </li>
+</ul>
+
+<p>then we define the subsequence \(x_{\left\lfloor\frac{t+s}{2}\right\rfloor}(t)\) as <span style=" border: 1px solid red;"><em>the event</em></span> we are interested in.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-23" style="background:;">
+  <hgroup>
+    <h2>Showing how it works</h2>
+  </hgroup>
+  <article data-timings="">
+    <div align="center">
+<img src="tsShapes.gif">
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-24" style="background:;">
+  <hgroup>
+    <h2>Events extracted</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/chunk8.pdf" title="plot of chunk chunk8" alt="plot of chunk chunk8" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-25" style="background:;">
+  <hgroup>
+    <h2>Robust to noise?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/chunk9.pdf" title="plot of chunk chunk9" alt="plot of chunk chunk9" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-26" style="background:;">
+  <hgroup>
+    <h2>2nd step: event classification</h2>
+  </hgroup>
+  <article data-timings="">
+    <h4>Goal: cluster the extracted events into patterns.</h4>
+
+<div align="center">
+<img src="shapeclustering.pdf" width=380, height=500>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-27" style="background:;">
+  <hgroup>
+    <h2>Comparison with literature</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:w1;' class='centered'>
+  <div align='center'>
+<img src="motif13.pdf" width=400, height=600>
+</div>
+
+</div>
+<div style='float:right;width:w2;'>
+  <div align='center'>
+<img src="shapeclustering.pdf" width=360, height=500>
+</div>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-28" style="background:#f5f5ae;">
+  <hgroup>
+    <h2>Chapter 5</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><p>Kang Y, Belusic D and Smith-Miles K (2014).
+&ldquo;Detecting and Classifying Events in Noisy Time Series.&rdquo;
+<EM>Journal of the Atmospheric Sciences</EM>, <B>71</B>(3), pp. 1090&ndash;1104.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-29" style="background:#f5f5ae;">
+  <hgroup>
+    <h2>Chapter 5</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><p>Kang Y, Belusic D and Smith-Miles K (2014).
+&ldquo;Detecting and Classifying Events in Noisy Time Series.&rdquo;
+<EM>Journal of the Atmospheric Sciences</EM>, <B>71</B>(3), pp. 1090&ndash;1104.</p>
+
+<h2>What&#39;s done?</h2>
+
+<ul>
+<li>Method improvement</li>
+<li>Application to a well known dataset</li>
+<li>Validation of the method</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-30" style="background:;">
+  <hgroup>
+    <h2>Motivation</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Pratical problems: 
+
+<ul>
+<li>non-stationarity</li>
+<li>turbulence intermittency</li>
+</ul></li>
+<li>AR(1) modelling --- stationarity</li>
+<li>Phillips-Perron (PP) Unit Root Test (<a href="">Perron (1988)</a>)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-31" style="background:;">
+  <hgroup>
+    <h2>Three cases of the unit root test</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>No trend, no drift:</li>
+</ul>
+
+<p>\[X_t=\phi*X_{t-1}+u_t \: (H_0: \phi=1)\]</p>
+
+<ul>
+<li>No trend, drift </li>
+</ul>
+
+<p>\[X_t=\delta+\phi*X_{t-1}+u_t \: (H_0: \phi=1)\]</p>
+
+<ul>
+<li>Trend, drift </li>
+</ul>
+
+<p>\[X_t=\delta+a+b*t+\phi*X_{t-1}+u_t \: (H_0: \phi=1)\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-32" style="background:;">
+  <hgroup>
+    <h2>PP Unit Root Test</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>\[\triangle X_t=\beta' D_t+\pi*X_{t-1}+u_t,\]</p>
+
+<p>\[ H_0: \pi = 0 \text{ (unit root)}\] 
+\[ H_1: \pi < 0 \text{ (stationary)}\]</p>
+
+<ul>
+<li>Drift and deterministic trend are considered in \(D_t\).</li>
+<li>\(X_t = \phi*X_{t-1}+u_t\).</li>
+<li>\(\pi=0\) means  \(\phi=1\) (unit root).</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-33" style="background:;">
+  <hgroup>
+    <h2>Why PP?</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><code>adf.test</code> (test for unit root) </li>
+<li><code>kpss.test</code> (test for stationarity)
+<img src="assets/fig/whypp.pdf" title="plot of chunk whypp" alt="plot of chunk whypp" style="display: block; margin: auto;" /></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-34" style="background:;">
+  <hgroup>
+    <h2>Example: random walks</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/rw.pdf" title="plot of chunk rw" alt="plot of chunk rw" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-35" style="background:;">
+  <hgroup>
+    <h2>Example: stationary</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/st.pdf" title="plot of chunk st" alt="plot of chunk st" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-36" style="background:;">
+  <hgroup>
+    <h2>Problem</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Difficult to statistically distinguish between an I(1)–series (e.g.  \(X_t = X_{t-1} + u_t\)) from a stable I(0) that is contaminated by a structrual shift, for example:</p>
+
+<p>\[
+\begin{aligned}
+& X_t = 0.5*X_{t-1} + 20*DU_t + u_t, \\
+&DU_t = \begin{cases}
+  1, & \text{if } t > 500, \\
+  0, & \text{otherwise}.
+\end{cases}
+\end{aligned}
+\]</p>
+
+<p><img src="assets/fig/pp_problem.pdf" title="plot of chunk pp_problem" alt="plot of chunk pp_problem" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-37" style="background:;">
+  <hgroup>
+    <h2>Structure breaks</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>In the presence of a structural break, the tests are biased towards the non-rejection of the null hypothesis.</p>
+
+<p><img src="assets/fig/break.pdf" title="plot of chunk break" alt="plot of chunk break" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-38" style="background:;">
+  <hgroup>
+    <h2>ZA test</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>A unit root test which considers structure break: Zivot &amp; Andrews (ZA) unit root test (<a href="">Zivot &amp; Andrews (1992)</a>)</p>
+
+<p>Allow a break in the null and alternative:</p>
+
+<p>\[
+\begin{aligned}
+&\triangle X_t=\pi*X_{t-1}+\theta*DU_t+\sum\limits_{j=1}^p \triangle X_{t-j}+u_t, \\
+&DU_t = \begin{cases}
+  1, & \text{if } t > TB, \\
+  0, & \text{otherwise}.
+\end{cases}
+\end{aligned}
+\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-39" style="background:;">
+  <hgroup>
+    <h2>ZA test example</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:w1;' class='centered'>
+  <p><img src="assets/fig/pp.pdf" title="plot of chunk pp" alt="plot of chunk pp" style="display: block; margin: auto;" /></p>
+
+</div>
+<div style='float:right;width:w2;'>
+  <p></br>
+</br></p>
+
+<p>Percentage of unit-root steps using PP: 100%</p>
+
+<p>Percentage of unit-root steps using ZA: 0%</p>
+
+<p></br>
+</br>
+</br>
+</br>
+</br>
+Percentage of unit-root ramps using PP: 97.8%</p>
+
+<p>Percentage of unit-root ramps using ZA: 1%</p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-40" style="background:;">
+  <hgroup>
+    <h2>The improved method</h2>
+  </hgroup>
+  <article data-timings="">
+    <div align="center">
+<img src="flowchart.pdf" width=1000,height=600>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-41" style="background:;">
+  <hgroup>
+    <h2>Comparison with literature</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>This is a comparison with wavelets method (<a href="">Thomas &amp; Foken (2005)</a>).</h3>
+
+<div align="center">
+<img src="red.pdf" width=900,height=400>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-42" style="background:;">
+  <hgroup>
+    <h2>Using the method</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Testing the performance</h3>
+
+<ul>
+<li><p>1999 Cooperative Atmosphere–Surface Exchange Study (CASES-99) (<a href="">Poulos et al. (2002)</a>).</p></li>
+<li><p>1-s averages of data from 1100 LST 5 October to 1100 LST 6 October (\(l=86400\)).</p></li>
+<li><p>validation by comparing the results with the previous studies.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-43" style="background:;">
+  <hgroup>
+    <h2>Event detection and clustering</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>102 events detected and clustered using:</h3>
+
+<ul>
+<li><code>Smoothness</code>: \(\frac{\text{sd}(\text{diff}(x))}{\text{mean(diff}(x)}\)</li>
+<li><code>diff kurtosis</code>:  kurtosis of diff(\(x\))</li>
+<li><code>diff Max</code>: \(\text{max}(\text{diff}(x,\text{lag}=5))\)</li>
+<li><code>diff Min</code>: \(\text{min}(\text{diff}(x,\text{lag}=5))\)</li>
+<li><code>sd</code>: measured in the same way as in the artificial time series</li>
+<li><code>Kurtosis</code>: measured in the same way as before</li>
+<li><code>Skewness</code>: measured in the same way as before</li>
+<li><code>Peroid</code>:  measured in the same way as before</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-44" style="background:;">
+  <hgroup>
+    <h2>Physical behaviors</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:w1;' class='centered'>
+  <p></br></p>
+
+<div>
+<img src="Transition.pdf" height="250" width="500">
+</div>
+
+<p></br></p>
+
+<p>- Evolution of clusters  in line with that of stability.</p>
+
+<p>- Distinction between deep and shallow events. </p> 
+
+</div>
+<div style='float:right;width:w2;'>
+  <div>
+<img src="Depths.pdf" height="550" width="450">
+</div>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-45" style="background:#f5f5ae;">
+  <hgroup>
+    <h2>Chapter 6</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><p>Kang Y, Belusic D and Smith-Miles K (2014).
+&ldquo;Classes of Structures in the Stable Atmospheric Boundary Layer (Submitting soon).&rdquo;
+<EM>Quarterly Journal of the Royal Meteorological Society</EM>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-46" style="background:;">
+  <hgroup>
+    <h2>Application</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>Motivation dataset --- FLOSS (<a href="">Mahrt (2011)</a>)</p>
+
+<ul>
+<li>130 nights</li>
+<li>9h per night</li>
+<li>6s averaged</li>
+<li>\(l=702000\)</li>
+</ul></li>
+<li><p>Very stable unknown ABL. </p></li>
+<li><p>No published results.</p></li>
+<li><p>Few studies on detailed physical analysis.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-47" style="background:;">
+  <hgroup>
+    <h2>FLOSS events and clustering</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>926 events detected and grouped into 3 clusters.</h3>
+
+<div align="center">
+<img src="pca_plot.pdf">
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-48" style="background:;">
+  <hgroup>
+    <h2>FLOSS event cluster prototypes</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:w1;' class='centered'>
+  <div>
+<img src="prototypes.pdf" height="600" width="400">
+</div>
+
+</div>
+<div style='float:right;width:w2;'>
+  <div>
+<img src="centroid.pdf" height="550" width="450">
+</div>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-49" style="background:;">
+  <hgroup>
+    <h2>FLOSS events: physical characteristics</h2>
+  </hgroup>
+  <article data-timings="">
+    <p></br></p>
+
+<p><center></p>
+
+<table><thead>
+<tr>
+<th align="left">Ri bins</th>
+<th align="center">Percentage of events</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">Ri &lt;= 0.25</td>
+<td align="center">19.1%</td>
+</tr>
+<tr>
+<td align="left">0.25 &lt; Ri &lt; 1</td>
+<td align="center">42.0%</td>
+</tr>
+<tr>
+<td align="left">Ri &gt;= 1</td>
+<td align="center">23.5%</td>
+</tr>
+</tbody></table>
+
+<p></center></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-50" style="background:;">
+  <hgroup>
+    <h2>FLOSS events: physical characteristics</h2>
+  </hgroup>
+  <article data-timings="">
+    <div align="center">
+<img src="boxplots.pdf" height="550" width="400">
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-51" style="background:;">
+  <hgroup>
+    <h2>FLOSS events: physical characteristics</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:w1;' class='centered'>
+  <div>
+<img src="boxplots_profiles_1.pdf" height="580" width="400">
+</div>
+
+</div>
+<div style='float:right;width:w2;'>
+  <p></br></p>
+
+<div>
+<img src="boxplots_profiles_2.pdf" height="460" width="400">
+</div>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-52" style="background:;">
+  <hgroup>
+    <h2>FLOSS events: deep and shallow events</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:w1;' class='centered'>
+  <p></br></p>
+
+<div>
+<img src="deepshallowtab.pdf" height="400" width="580">
+</div>
+
+</div>
+<div style='float:right;width:w2;'>
+  <p></br></p>
+
+<div>
+<img src="deep_and_shallow_shear.pdf" height="400" width="400">
+</div>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-53" style="background:;">
+  <hgroup>
+    <h2>FLOSS events: eg1 and eg2</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:w1;' class='centered'>
+  <div>
+<img src="Cl1eg.pdf" height="580" width="400">
+</div>
+
+</div>
+<div style='float:right;width:w2;'>
+  <div>
+<img src="Cl2eg.pdf" height="580" width="400">
+</div>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-54" style="background:;">
+  <hgroup>
+    <h2>FLOSS events: eg3 and hodograph</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:w1;' class='centered'>
+  <div>
+<img src="Cl3eg.pdf" height="580" width="400">
+</div>
+
+</div>
+<div style='float:right;width:w2;'>
+  <div>
+<img src="hodograph.pdf" height="250" width="500">
+</div>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-55" style="background:#f5f5ae;">
+  <hgroup>
+    <h2>Chapter 7</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><p>Kang Y, Belusic D and Smith-Miles K (2014).
+&ldquo;Detecting Events from Very Noisy Time Series with the R package <span class="pkg">TED</span>  (In preparation).&rdquo;
+<EM>Journal of Statistical Software</EM>.</p>
+
+<ul>
+<li><p>R package to share our work with the community</p></li>
+<li><p><a href="https://github.com/ykang/TED">https://github.com/ykang/TED</a></p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-56" style="background:#f5f5ae;">
+  <hgroup>
+    <h2>Conclusion</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Event detection, classification and interpretation in turbulence.</h3>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-57" style="background:#f5f5ae;">
+  <hgroup>
+    <h2>Conclusion</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Event <u>detection</u>, <u>classification</u> and <u>interpretation</u> in turbulence.</h3>
+
+<div align='center'>
+<img src='conclusion.pdf',width=1000,height=600>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-58" style="background:;">
+  <hgroup>
+    <h2>References</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><p>Kang Y (2012).
+&ldquo;Real-time change detection in time series based on growing feature quantization.&rdquo;
+In <EM>Proceedings of the 2012 International Joint Conference on Neural Networks (IJCNN)</EM>, pp. 1&ndash;6.
+IEEE.</p>
+
+<p><p>Kang Y, Smith-Miles K and Belusic D (2013).
+&ldquo;How to extract meaningful shapes from noisy time-series subsequences?&rdquo;
+In <EM>Proceedings of the 2013 IEEE Symposium on Computational Intelligence and Data Mining (CIDM)</EM>, pp. 65-72.
+IEEE.</p>
+
+<p><p>Kang Y, Belusic D and Smith-Miles K (2014).
+&ldquo;A note on the relationship between turbulent coherent structures and phase correlation (Resubmitted after revision).&rdquo;
+<EM>Chaos: An Interdisciplinary Journal of Nonlinear Science</EM>.</p>
+
+<p><p>Kang Y, Belusic D and Smith-Miles K (2014).
+&ldquo;Detecting and Classifying Events in Noisy Time Series.&rdquo;
+<EM>Journal of the Atmospheric Sciences</EM>, <B>71</B>(3), pp. 1090&ndash;1104.</p>
+
+<p><p>Kang Y, Belusic D and Smith-Miles K (2014).
+&ldquo;Classes of Structures in the Stable Atmospheric Boundary Layer (Submitting soon).&rdquo;
+<EM>Quarterly Journal of the Royal Meteorological Society</EM>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-59" style="background:;">
+  <hgroup>
+    <h2>References</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><p>Kang Y, Belusic D and Smith-Miles K (2014).
+&ldquo;Detecting Events from Very Noisy Time Series with the R package <span class="pkg">TED</span>  (In preparation).&rdquo;
+<EM>Journal of Statistical Software</EM>.</p>
+
+<p><p>Mahrt L (2011).
+&ldquo;Surface Wind Direction Variability.&rdquo;
+<EM>Journal of Applied Meteorology and Climatology</EM>, <B>50</B>(1), pp. 144&ndash;152.</p>
+
+<p><p>Poulos GS, Blumen W, Fritts DC, Lundquist JK, Sun J, Burns SP, Nappo C, Banta R, Newsom R, Cuxart J, Terradellas E, Balsley B and Jensen M (2002).
+&ldquo;CASES-99: A Comprehensive Investigation of the Stable Nocturnal Boundary Layer.&rdquo;
+<EM>Bulletin of the American Meteorological Society</EM>, <B>83</B>(4), pp. 555&ndash;581.</p>
+
+<p><p>Perron P (1988).
+&ldquo;Trends and random walks in macroeconomic time series: Further evidence from a new approach.&rdquo;
+<EM>Journal of economic dynamics and control</EM>, <B>12</B>(2), pp. 297&ndash;332.</p>
+
+<p><p>Zivot E and Andrews DWK (1992).
+&ldquo;Further evidence on the great crash, the oil-price shock, and the unit-root hypothesis.&rdquo;
+<EM>Journal of Business &amp;amp; Economic Statistics</EM>, <B>20</B>(1), pp. 25&ndash;44.</p>
+
+<p><p>Thomas C and Foken T (2005).
+&ldquo;Detection of Long-term Coherent Exchange over Spruce Forest Using Wavelet Analysis.&rdquo;
+<EM>Theoretical and Applied Climatology</EM>, <B>80</B>, pp. 91-104.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-60" style="background:;">
+  <article data-timings="">
+    <p><center></p>
+
+<h2>Questions?</h2>
+
+<p></br></p>
+
+<div align='center'>
+<img src="http://i.imgur.com/wjyiL.jpg" width="700" height="500">
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Introduction'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Motivation'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Difficulties'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Objectives'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='The journey'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Chapter 2'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Chapter 3'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Chapter 3'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Not really! Why?'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Surrogates of \(x_O(t)\)'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Measure of phase correlation I'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Measure of phase correlation II'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Measure of phase correlation II'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Results'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Conclusion'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Chapter 4'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='Chapter 4'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='Artificial time series'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='Methodology: two steps'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='$1$st step: event detection'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='\(p\)-value series for the artificial data'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='How to define events?'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='Showing how it works'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='Events extracted'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='Robust to noise?'>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='2nd step: event classification'>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='Comparison with literature'>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='Chapter 5'>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='Chapter 5'>
+         29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='Motivation'>
+         30
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title='Three cases of the unit root test'>
+         31
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title='PP Unit Root Test'>
+         32
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=33 title='Why PP?'>
+         33
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=34 title='Example: random walks'>
+         34
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=35 title='Example: stationary'>
+         35
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=36 title='Problem'>
+         36
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=37 title='Structure breaks'>
+         37
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=38 title='ZA test'>
+         38
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=39 title='ZA test example'>
+         39
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=40 title='The improved method'>
+         40
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=41 title='Comparison with literature'>
+         41
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=42 title='Using the method'>
+         42
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=43 title='Event detection and clustering'>
+         43
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=44 title='Physical behaviors'>
+         44
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=45 title='Chapter 6'>
+         45
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=46 title='Application'>
+         46
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=47 title='FLOSS events and clustering'>
+         47
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=48 title='FLOSS event cluster prototypes'>
+         48
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=49 title='FLOSS events: physical characteristics'>
+         49
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=50 title='FLOSS events: physical characteristics'>
+         50
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=51 title='FLOSS events: physical characteristics'>
+         51
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=52 title='FLOSS events: deep and shallow events'>
+         52
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=53 title='FLOSS events: eg1 and eg2'>
+         53
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=54 title='FLOSS events: eg3 and hodograph'>
+         54
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=55 title='Chapter 7'>
+         55
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=56 title='Conclusion'>
+         56
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=57 title='Conclusion'>
+         57
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=58 title='References'>
+         58
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=59 title='References'>
+         59
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=60 title=''>
+         60
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
