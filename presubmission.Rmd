@@ -91,12 +91,12 @@ print(bib[1],'html')
 
 *** =left
 <div>
-<img src='nile.png' width=450,height=450>
+<img src='nile.png' width=460,height=450>
 </div>
 
 *** =right
 <div>
-<img src='nileD.png' width=450,height=450>
+<img src='nileD.png' width=460,height=450>
 </div>
 
 --- bg:#f5f5ae
