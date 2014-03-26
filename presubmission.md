@@ -69,7 +69,7 @@ transition  : fade
 <img src="timeline.pdf" height="500" width="1000">
 </div>
 
---- bg:#f5f5ae
+--- bg:#f5f5ae 
 
 ## Chapter 2
 
@@ -78,6 +78,21 @@ transition  : fade
 In <EM>Proceedings of the 2012 International Joint Conference on Neural Networks (IJCNN)</EM>, pp. 1&ndash;6.
 IEEE.
 
+
+
+
+--- &twocol
+## An example
+
+*** =left
+<div>
+<img src='nile.png' width=450,height=450>
+</div>
+
+*** =right
+<div>
+<img src='nileD.png' width=450,height=450>
+</div>
 
 --- bg:#f5f5ae
 ## Chapter 3

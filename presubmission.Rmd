@@ -75,7 +75,7 @@ lines(c(78900:b[97]),CASES99T7[78900:b[97]]+273,col="#ff53a9")
 <img src="timeline.pdf" height="500" width="1000">
 </div>
 
---- bg:#f5f5ae
+--- bg:#f5f5ae 
 
 ## Chapter 2
 
@@ -83,6 +83,21 @@ lines(c(78900:b[97]),CASES99T7[78900:b[97]]+273,col="#ff53a9")
 bib <- read.bib("copy.bib")
 print(bib[1],'html')
 ```
+
+
+
+--- &twocol
+## An example
+
+*** =left
+<div>
+<img src='nile.png' width=450,height=450>
+</div>
+
+*** =right
+<div>
+<img src='nileD.png' width=450,height=450>
+</div>
 
 --- bg:#f5f5ae
 ## Chapter 3
