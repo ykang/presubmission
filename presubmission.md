@@ -40,7 +40,7 @@ transition  : fade
 ## Difficulties
 
 - Red noise
-- Varibility of spatial and temporal scales.
+- Varibility of scales.
 - Previously unknown.
 - Small amount of literature.
 
@@ -52,11 +52,11 @@ transition  : fade
 >1. Develop a method to detect and classify events:
   - does not require any pre-assumptions of events.
   - deal with high noise.
-  - not limited by  stability or scales. 
+  - not limited by scales. 
 >2. Application of the method on a well-known dataset
   - also a validation of the method.
 >3. Use the method to
-  - detect events in the unknown stable atmospheric boundary layer (ABL).
+  - detect events in the generally unknown stable atmospheric boundary layer (ABL).
   - find  physical  dynamics of different types of events.
   - study the effects of the event to the turbulence flows.  
 >4. Develop a statistical tool and make it easy to use for others.
@@ -94,16 +94,10 @@ IEEE.
 <img src='nileD.png' width=460,height=450>
 </div>
 
---- bg:#f5f5ae
-## Chapter 3
-
-<p>Kang Y, Belusic D and Smith-Miles K (2014).
-&ldquo;A note on the relationship between turbulent coherent structures and phase correlation (Resubmitted after revision).&rdquo;
-<EM>Chaos: An Interdisciplinary Journal of Nonlinear Science</EM>.
 
 
 --- bg:#f5f5ae
-## Chapter 3
+##  Chapter 3 
 
 <p>Kang Y, Belusic D and Smith-Miles K (2014).
 &ldquo;A note on the relationship between turbulent coherent structures and phase correlation (Resubmitted after revision).&rdquo;
@@ -121,23 +115,23 @@ IEEE.
 - Really? Can we use that to detect events?
 
 ---
-## Not really! Why?
+## Coherent structures = phase correlated ?
 
 - Coherent structures detected using wavelets method
 - Measure their phase correlation.
-- How? Using surrogates.
+- How? By comparison with their surrogates.
 
 ---
 ## Surrogates of $x_O(t)$
 
 
->1. phase randomized surrogate $x_R(t)$
+1. phase randomized surrogate $x_R(t)$
   - take the Fourier Transform of $x_O(t)$.
   - randomize phase information while keeping the magnitude.
   - do inverse Fourier Transform to get back to time domain to get $x_R(t)$.
-  - none phase correlation.
+  - none phase correlation left.
 
->2. completely coherent surrogate $x_C(t)$
+2. completely coherent surrogate $x_C(t)$
   - obtained by making the phases constant.
   - largest phase correlation
 
@@ -147,14 +141,20 @@ IEEE.
 
 Given $x_O(t)$, $x_R(t)$ and $x_C(t)$,
 
-$$CI(q,\tau)=\left(\frac{|S_O(q,\tau)-S_R(q,\tau)|}{|S_O(q,\tau-S_R(q,\tau))|+|S_O(q,\tau)-S_C(q,\tau)|}\right)^{1/q},$$
-where $S_i(q,\tau)$ is the $q$th order structure function: $S_i(q,\tau)=\left<|x_i(t+\tau)-x_i(t)|^q\right>$, $i \in \{O, R, C\}$ and $\tau$ is the time lag.
+$$CI(\tau)=\frac{|S_O(\tau)-S_R(\tau)|}{|S_O(\tau)-S_R(\tau))|+|S_O(\tau)-S_C(\tau)|},$$
+where $S_i(\tau)$ is the 1st order structure function: $S_i(\tau)=\left<|x_i(t+\tau)-x_i(t)|\right>$, $i \in \{O, R, C\}$ and $\tau$ is the time lag.
 
+>- $0 \leq CI \leq 1$
+>- 1 = completely phase correlated 
+>- 0 = random phase
 
 ---
 ## Measure of phase correlation II
 
 ### Nonlinearity Measure Based on Nonlinear Prediction Error ($nm_{npe}$)
+
+Basis: Nonlinear time series with phase correlation:  more predictable than their surrogates.
+
 \[
 X=
   \begin{bmatrix}
@@ -165,10 +165,12 @@ X=
   \end{bmatrix}
 \] 
 
-For each row (delay vector) of $X$, its $k$ nearest $m$-dimensional delay vectors are found using Euclidean distances. If the $k$ nearest delay vectors for  $\vec{x}_i$ are $\vec{x}_{j_p}$, $p=1, 2, \cdots, k$, the nonlinear prediction error for the time series $x(t)$ is defined as 
+For each row, find its $k$ nearest  delay vectors, denoted as $\vec{x}_{j_p}$, $p=1, \cdots, k$, then
 $$
 \tau_X(m, k)= \sum\limits_{i=1}^{n-m}\left(x(i+m) - \frac{1}{k}\sum\limits_{p=1}^k x(j_p+m)\right)^2.
 $$
+
+
 
 ---
 ## Measure of phase correlation II
@@ -178,7 +180,7 @@ $$
 $$
 nm_{npe}=\frac{\bar{\tau}_R-\tau_X}{3\sigma_{R}},
 $$
-where $\tau_X$ is the nonlinear prediction error of the original data, while $\bar{\tau}_R$ and $\sigma_R$ are the mean and standard deviation of the nonlinear prediction errors of the surrogates. 
+where $\tau_X$ is the $npe$ of the original, while $\bar{\tau}_R$ and $\sigma_R$ are the mean and standard deviation of the $npe$ of the surrogates. 
 
 $$
 \begin{aligned}
@@ -192,13 +194,15 @@ $$
 
 
 ---
-## Results
+## Results 
+- 1999 Cooperative Atmosphere–Surface Exchange Study (CASES-99) (<a href="">Poulos et al. (2002)</a>).
+- 1-s averages of data for one day (252 events)
 <div align="center">
 <img src="hist.pdf" width=800, height=400>
 </div>
 
 ---
-## Conclusion
+## Conclusion 3
 
 
 
@@ -209,17 +213,6 @@ $$
 >- then?
 
 
-
-
-
---- bg:#f5f5ae
-
-## Chapter 4
-
-<p>Kang Y, Smith-Miles K and Belusic D (2013).
-&ldquo;How to extract meaningful shapes from noisy time-series subsequences?&rdquo;
-In <EM>Proceedings of the 2013 IEEE Symposium on Computational Intelligence and Data Mining (CIDM)</EM>, pp. 65-72.
-IEEE.
 
 
 --- bg:#f5f5ae
@@ -269,19 +262,20 @@ IEEE.
 ## $1$st step: event detection 
 
 - Perform  noise test on each subsequence.
-
-
-  >- Why? Only care the non-noise subsequences.
-
-  >- Then given a window length,  for the $q$th subsequence, get $p$-value $p_q$. For $x(t)$,  a $p$-value series:  $p_1,p_2,\cdots,p_{m-w+1}$.
+- Why? Only care the non-noise subsequences.
+  - white noise test: Ljung-Box test
+  - red noise test: fit $AR(1)$ model and perform white noise test on the model residuals
+  - $H_0:$ noise
 
 --- 
 
 ## $p$-value series for the artificial data
-<center>
-#### Sliding window length: $w=128$
-</center>
-<img src="assets/fig/chunk4.pdf" title="plot of chunk chunk4" alt="plot of chunk chunk4" style="display: block; margin: auto;" />
+
+Then given a window length,  for the $q$th subsequence, get $p$-value $p_q$. For $x(t)$,  a $p$-value series:  $p_1,p_2,\cdots,p_{m-w+1}$.
+
+<div align='center'>
+<img src='sliding.gif' width=800,height=400>
+</div>
 
 
 ---
@@ -315,6 +309,8 @@ IEEE.
 <img src="assets/fig/chunk8.pdf" title="plot of chunk chunk8" alt="plot of chunk chunk8" style="display: block; margin: auto;" />
 
 
+
+
 ---
 
 ## Robust to noise?
@@ -326,44 +322,38 @@ IEEE.
 
 
 
---- 
-
-## 2nd step: event classification
-
-#### Goal: cluster the extracted events into patterns. 
-
-
-<div align="center">
-<img src="shapeclustering.pdf" width=380, height=500>
-</div>
 
 --- &twocol w1:50% w2:50%
 
-## Comparison with literature 
-
+## 2nd step: event classification
+#### Goal: cluster the extracted events into patterns (http://robjhyndman.com/hyndsight/tscharacteristics/).
 *** =left
-
-<div align='center'>
-<img src="motif13.pdf" width=400, height=600>
-</div>
-
-*** =right 
 
 <div align='center'>
 <img src="shapeclustering.pdf" width=360, height=500>
 </div>
 
+*** =right 
+<div align='center'>
+<img src="motif.pdf" width=400, height=460>
+</div>
+
+---
+## 2nd step: event classification (GFQ)
+
+<img src="assets/fig/GFQ.pdf" title="plot of chunk GFQ" alt="plot of chunk GFQ" style="display: block; margin: auto;" />
 
 
+--- 
+## Conclusion 4
 
---- bg:#f5f5ae
-
-## Chapter 5
-
-<p>Kang Y, Belusic D and Smith-Miles K (2014).
-&ldquo;Detecting and Classifying Events in Noisy Time Series.&rdquo;
-<EM>Journal of the Atmospheric Sciences</EM>, <B>71</B>(3), pp. 1090&ndash;1104.
-
+- Two-step
+  - detection
+  - classification  
+- Applied to artificial and real world data
+- Better results than literature
+- Robust to noise level
+- A big step regarding Objective 1
 
 --- bg:#f5f5ae
 
@@ -435,15 +425,9 @@ $$ H_1: \pi < 0 \text{ (stationary)}$$
 ---
 
 
-## Example: random walks
+## Example: PP test
 
 <img src="assets/fig/rw.pdf" title="plot of chunk rw" alt="plot of chunk rw" style="display: block; margin: auto;" />
-
-
----
-## Example: stationary
-
-<img src="assets/fig/st.pdf" title="plot of chunk st" alt="plot of chunk st" style="display: block; margin: auto;" />
 
 
 ---
@@ -507,18 +491,18 @@ $$
 </br>
 
 
-Percentage of unit-root steps using PP: 100%
+Percentage of unit-root processes using PP: 100%
 
-Percentage of unit-root steps using ZA: 0%
+Percentage of unit-root processes using ZA: 0%
 
 </br>
 </br>
 </br>
 </br>
 </br>
-Percentage of unit-root ramps using PP: 97.8%
+Percentage of unit-root processes using PP: 97.8%
 
-Percentage of unit-root ramps using ZA: 1%
+Percentage of unit-root processes using ZA: 1%
 
 
 
@@ -561,7 +545,7 @@ Percentage of unit-root ramps using ZA: 1%
 
 ### 102 events detected and clustered using:
 
-  - `Smoothness`: $\frac{\text{sd}(\text{diff}(x))}{\text{mean(diff}(x)}$
+  - `non-smoothness`: $\frac{\text{sd}(\text{diff}(x))}{\text{mean(diff}(x)}$
   - `diff kurtosis`:  kurtosis of diff($x$)
   - `diff Max`: $\text{max}(\text{diff}(x,\text{lag}=5))$
   - `diff Min`: $\text{min}(\text{diff}(x,\text{lag}=5))$
@@ -569,6 +553,15 @@ Percentage of unit-root ramps using ZA: 1%
   - `Kurtosis`: measured in the same way as before
   - `Skewness`: measured in the same way as before
   - `Peroid`:  measured in the same way as before
+
+
+---
+
+## Clustering
+
+<div align='center'>
+<img src='Heatmap.pdf' width=700, height=550>
+</div>
 
 --- &twocol w1:50% w2:50%
 
@@ -585,12 +578,21 @@ Percentage of unit-root ramps using ZA: 1%
 <p>- Evolution of clusters  in line with that of stability.</p>
 
 <p>- Distinction between deep and shallow events. </p> 
+
+<p>- Events found in line with literature. </p> 
 *** =right
 <div>
 <img src="Depths.pdf" height="550" width="450">
 </div>
 
 
+---
+## Conclusion 5
+
+- Method improvemnet
+- Comparison with wavelets
+- Application to well-known data
+- Validation of the method
 
  
 
@@ -605,13 +607,11 @@ Percentage of unit-root ramps using ZA: 1%
 <EM>Quarterly Journal of the Royal Meteorological Society</EM>.
 
 
----
 ## Application
 
 - Motivation dataset --- FLOSS (<a href="">Mahrt (2011)</a>)
 
-  - 130 nights
-  - 9h per night
+  - 130 nights; 9h per night
   - 6s averaged
   - $l=702000$
 
@@ -675,7 +675,7 @@ Percentage of unit-root ramps using ZA: 1%
 </div>
 
 --- &twocol w1:60% w2:40%
-## FLOSS events: deep and shallow events
+## FLOSS events: deep (shallow) events
 
 *** =left
 </br>
@@ -694,12 +694,12 @@ Percentage of unit-root ramps using ZA: 1%
 *** =left
 
 <div>
-<img src="Cl1eg.pdf" height="580" width="400">
+<img src="Cl1eg1.pdf" height="580" width="400">
 </div>
 *** =right
 
 <div>
-<img src="Cl2eg.pdf" height="580" width="400">
+<img src="Cl2eg2.pdf" height="580" width="400">
 </div>
 
 --- &twocol w1:50% w2:50%
@@ -708,7 +708,7 @@ Percentage of unit-root ramps using ZA: 1%
 *** =left
 
 <div>
-<img src="Cl3eg.pdf" height="580" width="400">
+<img src="Cl3eg3.pdf" height="580" width="400">
 </div>
 *** =right
 

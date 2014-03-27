@@ -83,7 +83,7 @@
   <article data-timings="">
     <ul>
 <li>Red noise</li>
-<li>Varibility of spatial and temporal scales.</li>
+<li>Varibility of scales.</li>
 <li>Previously unknown.</li>
 <li>Small amount of literature.</li>
 </ul>
@@ -103,7 +103,7 @@
 <ul>
 <li>does not require any pre-assumptions of events.</li>
 <li>deal with high noise.</li>
-<li>not limited by  stability or scales. </li>
+<li>not limited by scales. </li>
 </ul></li>
 <li>Application of the method on a well-known dataset
 
@@ -113,7 +113,7 @@
 <li>Use the method to
 
 <ul>
-<li>detect events in the unknown stable atmospheric boundary layer (ABL).</li>
+<li>detect events in the generally unknown stable atmospheric boundary layer (ABL).</li>
 <li>find  physical  dynamics of different types of events.</li>
 <li>study the effects of the event to the turbulence flows.<br></li>
 </ul></li>
@@ -182,19 +182,6 @@ IEEE.</p>
 &ldquo;A note on the relationship between turbulent coherent structures and phase correlation (Resubmitted after revision).&rdquo;
 <EM>Chaos: An Interdisciplinary Journal of Nonlinear Science</EM>.</p>
 
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-9" style="background:#f5f5ae;">
-  <hgroup>
-    <h2>Chapter 3</h2>
-  </hgroup>
-  <article data-timings="">
-    <p><p>Kang Y, Belusic D and Smith-Miles K (2014).
-&ldquo;A note on the relationship between turbulent coherent structures and phase correlation (Resubmitted after revision).&rdquo;
-<EM>Chaos: An Interdisciplinary Journal of Nonlinear Science</EM>.</p>
-
 <h2>What are events? Characteristics?</h2>
 
 <h3>Coherent structures</h3>
@@ -209,34 +196,34 @@ IEEE.</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-10" style="background:;">
+<slide class="" id="slide-9" style="background:;">
   <hgroup>
-    <h2>Not really! Why?</h2>
+    <h2>Coherent structures = phase correlated ?</h2>
   </hgroup>
   <article data-timings="">
     <ul>
 <li>Coherent structures detected using wavelets method</li>
 <li>Measure their phase correlation.</li>
-<li>How? Using surrogates.</li>
+<li>How? By comparison with their surrogates.</li>
 </ul>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-11" style="background:;">
+<slide class="" id="slide-10" style="background:;">
   <hgroup>
     <h2>Surrogates of \(x_O(t)\)</h2>
   </hgroup>
   <article data-timings="">
-    <ol class = "build incremental">
+    <ol>
 <li><p>phase randomized surrogate \(x_R(t)\)</p>
 
 <ul>
 <li>take the Fourier Transform of \(x_O(t)\).</li>
 <li>randomize phase information while keeping the magnitude.</li>
 <li>do inverse Fourier Transform to get back to time domain to get \(x_R(t)\).</li>
-<li>none phase correlation.</li>
+<li>none phase correlation left.</li>
 </ul></li>
 <li><p>completely coherent surrogate \(x_C(t)\)</p>
 
@@ -250,7 +237,7 @@ IEEE.</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-12" style="background:;">
+<slide class="" id="slide-11" style="background:;">
   <hgroup>
     <h2>Measure of phase correlation I</h2>
   </hgroup>
@@ -259,8 +246,42 @@ IEEE.</p>
 
 <p>Given \(x_O(t)\), \(x_R(t)\) and \(x_C(t)\),</p>
 
-<p>\[CI(q,\tau)=\left(\frac{|S_O(q,\tau)-S_R(q,\tau)|}{|S_O(q,\tau-S_R(q,\tau))|+|S_O(q,\tau)-S_C(q,\tau)|}\right)^{1/q},\]
-where \(S_i(q,\tau)\) is the $q$th order structure function: \(S_i(q,\tau)=\left<|x_i(t+\tau)-x_i(t)|^q\right>\), \(i \in \{O, R, C\}\) and \(\tau\) is the time lag.</p>
+<p>\[CI(\tau)=\frac{|S_O(\tau)-S_R(\tau)|}{|S_O(\tau)-S_R(\tau))|+|S_O(\tau)-S_C(\tau)|},\]
+where \(S_i(\tau)\) is the 1st order structure function: \(S_i(\tau)=\left<|x_i(t+\tau)-x_i(t)|\right>\), \(i \in \{O, R, C\}\) and \(\tau\) is the time lag.</p>
+
+<ul class = "build incremental">
+<li>\(0 \leq CI \leq 1\)</li>
+<li>1 = completely phase correlated </li>
+<li>0 = random phase</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>Measure of phase correlation II</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Nonlinearity Measure Based on Nonlinear Prediction Error (\(nm_{npe}\))</h3>
+
+<p>Basis: Nonlinear time series with phase correlation:  more predictable than their surrogates.</p>
+
+<p>\[
+X=
+  \begin{bmatrix}
+    x(1) & x(2) & \cdots & x(m) \\
+    x(2) & x(3) & \cdots & x(m+1) \\
+    \cdots & \cdots & \cdots & \cdots \\
+    x(n-m+1) & x(n-m+2) & \cdots & x(n) \\
+  \end{bmatrix}
+\] </p>
+
+<p>For each row, find its \(k\) nearest  delay vectors, denoted as \(\vec{x}_{j_p}\), \(p=1, \cdots, k\), then
+\[
+\tau_X(m, k)= \sum\limits_{i=1}^{n-m}\left(x(i+m) - \frac{1}{k}\sum\limits_{p=1}^k x(j_p+m)\right)^2.
+\]</p>
 
   </article>
   <!-- Presenter Notes -->
@@ -274,35 +295,9 @@ where \(S_i(q,\tau)\) is the $q$th order structure function: \(S_i(q,\tau)=\left
     <h3>Nonlinearity Measure Based on Nonlinear Prediction Error (\(nm_{npe}\))</h3>
 
 <p>\[
-X=
-  \begin{bmatrix}
-    x(1) & x(2) & \cdots & x(m) \\
-    x(2) & x(3) & \cdots & x(m+1) \\
-    \cdots & \cdots & \cdots & \cdots \\
-    x(n-m+1) & x(n-m+2) & \cdots & x(n) \\
-  \end{bmatrix}
-\] </p>
-
-<p>For each row (delay vector) of \(X\), its \(k\) nearest \(m\)-dimensional delay vectors are found using Euclidean distances. If the \(k\) nearest delay vectors for  \(\vec{x}_i\) are \(\vec{x}_{j_p}\), \(p=1, 2, \cdots, k\), the nonlinear prediction error for the time series \(x(t)\) is defined as 
-\[
-\tau_X(m, k)= \sum\limits_{i=1}^{n-m}\left(x(i+m) - \frac{1}{k}\sum\limits_{p=1}^k x(j_p+m)\right)^2.
-\]</p>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-14" style="background:;">
-  <hgroup>
-    <h2>Measure of phase correlation II</h2>
-  </hgroup>
-  <article data-timings="">
-    <h3>Nonlinearity Measure Based on Nonlinear Prediction Error (\(nm_{npe}\))</h3>
-
-<p>\[
 nm_{npe}=\frac{\bar{\tau}_R-\tau_X}{3\sigma_{R}},
 \]
-where \(\tau_X\) is the nonlinear prediction error of the original data, while \(\bar{\tau}_R\) and \(\sigma_R\) are the mean and standard deviation of the nonlinear prediction errors of the surrogates. </p>
+where \(\tau_X\) is the \(npe\) of the original, while \(\bar{\tau}_R\) and \(\sigma_R\) are the mean and standard deviation of the \(npe\) of the surrogates. </p>
 
 <p>\[
 \begin{aligned}
@@ -318,22 +313,26 @@ where \(\tau_X\) is the nonlinear prediction error of the original data, while \
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-15" style="background:;">
+<slide class="" id="slide-14" style="background:;">
   <hgroup>
     <h2>Results</h2>
   </hgroup>
   <article data-timings="">
-    <div align="center">
+    <ul>
+<li>1999 Cooperative Atmosphere–Surface Exchange Study (CASES-99) (<a href="">Poulos et al. (2002)</a>).</li>
+<li>1-s averages of data for one day (252 events)
+<div align="center">
 <img src="hist.pdf" width=800, height=400>
-</div>
+</div></li>
+</ul>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-16" style="background:;">
+<slide class="" id="slide-15" style="background:;">
   <hgroup>
-    <h2>Conclusion</h2>
+    <h2>Conclusion 3</h2>
   </hgroup>
   <article data-timings="">
     <ul class = "build incremental">
@@ -346,21 +345,7 @@ where \(\tau_X\) is the nonlinear prediction error of the original data, while \
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-17" style="background:#f5f5ae;">
-  <hgroup>
-    <h2>Chapter 4</h2>
-  </hgroup>
-  <article data-timings="">
-    <p><p>Kang Y, Smith-Miles K and Belusic D (2013).
-&ldquo;How to extract meaningful shapes from noisy time-series subsequences?&rdquo;
-In <EM>Proceedings of the 2013 IEEE Symposium on Computational Intelligence and Data Mining (CIDM)</EM>, pp. 65-72.
-IEEE.</p>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-18" style="background:#f5f5ae;">
+<slide class="" id="slide-16" style="background:#f5f5ae;">
   <hgroup>
     <h2>Chapter 4</h2>
   </hgroup>
@@ -380,7 +365,7 @@ IEEE.</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-19" style="background:;">
+<slide class="" id="slide-17" style="background:;">
   <hgroup>
     <h2>Artificial time series</h2>
   </hgroup>
@@ -393,7 +378,7 @@ IEEE.</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-20" style="background:;">
+<slide class="" id="slide-18" style="background:;">
   <hgroup>
     <h2>Methodology: two steps</h2>
   </hgroup>
@@ -407,17 +392,19 @@ IEEE.</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-21" style="background:;">
+<slide class="" id="slide-19" style="background:;">
   <hgroup>
     <h2>$1$st step: event detection</h2>
   </hgroup>
   <article data-timings="">
     <ul>
-<li><p>Perform  noise test on each subsequence.</p>
+<li>Perform  noise test on each subsequence.</li>
+<li>Why? Only care the non-noise subsequences.
 
-<ul class = "build incremental">
-<li><p>Why? Only care the non-noise subsequences.</p></li>
-<li><p>Then given a window length,  for the $q$th subsequence, get \(p\)-value \(p_q\). For \(x(t)\),  a \(p\)-value series:  \(p_1,p_2,\cdots,p_{m-w+1}\).</p></li>
+<ul>
+<li>white noise test: Ljung-Box test</li>
+<li>red noise test: fit \(AR(1)\) model and perform white noise test on the model residuals</li>
+<li>\(H_0:\) noise</li>
 </ul></li>
 </ul>
 
@@ -425,23 +412,22 @@ IEEE.</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-22" style="background:;">
+<slide class="" id="slide-20" style="background:;">
   <hgroup>
     <h2>\(p\)-value series for the artificial data</h2>
   </hgroup>
   <article data-timings="">
-    <p><center></p>
+    <p>Then given a window length,  for the $q$th subsequence, get \(p\)-value \(p_q\). For \(x(t)\),  a \(p\)-value series:  \(p_1,p_2,\cdots,p_{m-w+1}\).</p>
 
-<h4>Sliding window length: \(w=128\)</h4>
-
-<p></center>
-<img src="assets/fig/chunk4.pdf" title="plot of chunk chunk4" alt="plot of chunk chunk4" style="display: block; margin: auto;" /></p>
+<div align='center'>
+<img src='sliding.gif' width=800,height=400>
+</div>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-23" style="background:;">
+<slide class="" id="slide-21" style="background:;">
   <hgroup>
     <h2>How to define events?</h2>
   </hgroup>
@@ -464,7 +450,7 @@ IEEE.</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-24" style="background:;">
+<slide class="" id="slide-22" style="background:;">
   <hgroup>
     <h2>Showing how it works</h2>
   </hgroup>
@@ -477,7 +463,7 @@ IEEE.</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-25" style="background:;">
+<slide class="" id="slide-23" style="background:;">
   <hgroup>
     <h2>Events extracted</h2>
   </hgroup>
@@ -488,7 +474,7 @@ IEEE.</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-26" style="background:;">
+<slide class="" id="slide-24" style="background:;">
   <hgroup>
     <h2>Robust to noise?</h2>
   </hgroup>
@@ -499,57 +485,63 @@ IEEE.</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-27" style="background:;">
+<slide class="" id="slide-25" style="background:;">
   <hgroup>
     <h2>2nd step: event classification</h2>
   </hgroup>
   <article data-timings="">
-    <h4>Goal: cluster the extracted events into patterns.</h4>
+    <h4>Goal: cluster the extracted events into patterns (<a href="http://robjhyndman.com/hyndsight/tscharacteristics/">http://robjhyndman.com/hyndsight/tscharacteristics/</a>).</h4>
 
-<div align="center">
-<img src="shapeclustering.pdf" width=380, height=500>
-</div>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-28" style="background:;">
-  <hgroup>
-    <h2>Comparison with literature</h2>
-  </hgroup>
-  <article data-timings="">
-    
 <div style='float:left;width:w1;' class='centered'>
-  <div align='center'>
-<img src="motif13.pdf" width=400, height=600>
-</div>
-
-</div>
-<div style='float:right;width:w2;'>
   <div align='center'>
 <img src="shapeclustering.pdf" width=360, height=500>
 </div>
 
 </div>
+<div style='float:right;width:w2;'>
+  <div align='center'>
+<img src="motif.pdf" width=400, height=460>
+</div>
+
+</div>
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-29" style="background:#f5f5ae;">
+<slide class="" id="slide-26" style="background:;">
   <hgroup>
-    <h2>Chapter 5</h2>
+    <h2>2nd step: event classification (GFQ)</h2>
   </hgroup>
   <article data-timings="">
-    <p><p>Kang Y, Belusic D and Smith-Miles K (2014).
-&ldquo;Detecting and Classifying Events in Noisy Time Series.&rdquo;
-<EM>Journal of the Atmospheric Sciences</EM>, <B>71</B>(3), pp. 1090&ndash;1104.</p>
+    <p><img src="assets/fig/GFQ.pdf" title="plot of chunk GFQ" alt="plot of chunk GFQ" style="display: block; margin: auto;" /></p>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-30" style="background:#f5f5ae;">
+<slide class="" id="slide-27" style="background:;">
+  <hgroup>
+    <h2>Conclusion 4</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Two-step
+
+<ul>
+<li>detection</li>
+<li>classification<br></li>
+</ul></li>
+<li>Applied to artificial and real world data</li>
+<li>Better results than literature</li>
+<li>Robust to noise level</li>
+<li>A big step regarding Objective 1</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-28" style="background:#f5f5ae;">
   <hgroup>
     <h2>Chapter 5</h2>
   </hgroup>
@@ -570,7 +562,7 @@ IEEE.</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-31" style="background:;">
+<slide class="" id="slide-29" style="background:;">
   <hgroup>
     <h2>Motivation</h2>
   </hgroup>
@@ -590,7 +582,7 @@ IEEE.</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-32" style="background:;">
+<slide class="" id="slide-30" style="background:;">
   <hgroup>
     <h2>Three cases of the unit root test</h2>
   </hgroup>
@@ -617,7 +609,7 @@ IEEE.</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-33" style="background:;">
+<slide class="" id="slide-31" style="background:;">
   <hgroup>
     <h2>PP Unit Root Test</h2>
   </hgroup>
@@ -637,7 +629,7 @@ IEEE.</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-34" style="background:;">
+<slide class="" id="slide-32" style="background:;">
   <hgroup>
     <h2>Why PP?</h2>
   </hgroup>
@@ -652,9 +644,9 @@ IEEE.</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-35" style="background:;">
+<slide class="" id="slide-33" style="background:;">
   <hgroup>
-    <h2>Example: random walks</h2>
+    <h2>Example: PP test</h2>
   </hgroup>
   <article data-timings="">
     <p><img src="assets/fig/rw.pdf" title="plot of chunk rw" alt="plot of chunk rw" style="display: block; margin: auto;" /></p>
@@ -663,18 +655,7 @@ IEEE.</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-36" style="background:;">
-  <hgroup>
-    <h2>Example: stationary</h2>
-  </hgroup>
-  <article data-timings="">
-    <p><img src="assets/fig/st.pdf" title="plot of chunk st" alt="plot of chunk st" style="display: block; margin: auto;" /></p>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-37" style="background:;">
+<slide class="" id="slide-34" style="background:;">
   <hgroup>
     <h2>Problem</h2>
   </hgroup>
@@ -697,7 +678,7 @@ IEEE.</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-38" style="background:;">
+<slide class="" id="slide-35" style="background:;">
   <hgroup>
     <h2>Structure breaks</h2>
   </hgroup>
@@ -710,7 +691,7 @@ IEEE.</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-39" style="background:;">
+<slide class="" id="slide-36" style="background:;">
   <hgroup>
     <h2>ZA test</h2>
   </hgroup>
@@ -733,7 +714,7 @@ IEEE.</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-40" style="background:;">
+<slide class="" id="slide-37" style="background:;">
   <hgroup>
     <h2>ZA test example</h2>
   </hgroup>
@@ -747,25 +728,25 @@ IEEE.</p>
   <p></br>
 </br></p>
 
-<p>Percentage of unit-root steps using PP: 100%</p>
+<p>Percentage of unit-root processes using PP: 100%</p>
 
-<p>Percentage of unit-root steps using ZA: 0%</p>
+<p>Percentage of unit-root processes using ZA: 0%</p>
 
 <p></br>
 </br>
 </br>
 </br>
 </br>
-Percentage of unit-root ramps using PP: 97.8%</p>
+Percentage of unit-root processes using PP: 97.8%</p>
 
-<p>Percentage of unit-root ramps using ZA: 1%</p>
+<p>Percentage of unit-root processes using ZA: 1%</p>
 
 </div>
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-41" style="background:;">
+<slide class="" id="slide-38" style="background:;">
   <hgroup>
     <h2>The improved method</h2>
   </hgroup>
@@ -778,7 +759,7 @@ Percentage of unit-root ramps using PP: 97.8%</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-42" style="background:;">
+<slide class="" id="slide-39" style="background:;">
   <hgroup>
     <h2>Comparison with literature</h2>
   </hgroup>
@@ -793,7 +774,7 @@ Percentage of unit-root ramps using PP: 97.8%</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-43" style="background:;">
+<slide class="" id="slide-40" style="background:;">
   <hgroup>
     <h2>Using the method</h2>
   </hgroup>
@@ -810,7 +791,7 @@ Percentage of unit-root ramps using PP: 97.8%</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-44" style="background:;">
+<slide class="" id="slide-41" style="background:;">
   <hgroup>
     <h2>Event detection and clustering</h2>
   </hgroup>
@@ -818,7 +799,7 @@ Percentage of unit-root ramps using PP: 97.8%</p>
     <h3>102 events detected and clustered using:</h3>
 
 <ul>
-<li><code>Smoothness</code>: \(\frac{\text{sd}(\text{diff}(x))}{\text{mean(diff}(x)}\)</li>
+<li><code>non-smoothness</code>: \(\frac{\text{sd}(\text{diff}(x))}{\text{mean(diff}(x)}\)</li>
 <li><code>diff kurtosis</code>:  kurtosis of diff(\(x\))</li>
 <li><code>diff Max</code>: \(\text{max}(\text{diff}(x,\text{lag}=5))\)</li>
 <li><code>diff Min</code>: \(\text{min}(\text{diff}(x,\text{lag}=5))\)</li>
@@ -832,7 +813,20 @@ Percentage of unit-root ramps using PP: 97.8%</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-45" style="background:;">
+<slide class="" id="slide-42" style="background:;">
+  <hgroup>
+    <h2>Clustering</h2>
+  </hgroup>
+  <article data-timings="">
+    <div align='center'>
+<img src='Heatmap.pdf' width=700, height=550>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-43" style="background:;">
   <hgroup>
     <h2>Physical behaviors</h2>
   </hgroup>
@@ -851,6 +845,8 @@ Percentage of unit-root ramps using PP: 97.8%</p>
 
 <p>- Distinction between deep and shallow events. </p> 
 
+<p>- Events found in line with literature. </p> 
+
 </div>
 <div style='float:right;width:w2;'>
   <div>
@@ -862,7 +858,23 @@ Percentage of unit-root ramps using PP: 97.8%</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-46" style="background:#f5f5ae;">
+<slide class="" id="slide-44" style="background:;">
+  <hgroup>
+    <h2>Conclusion 5</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Method improvemnet</li>
+<li>Comparison with wavelets</li>
+<li>Application to well-known data</li>
+<li>Validation of the method</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-45" style="background:#f5f5ae;">
   <hgroup>
     <h2>Chapter 6</h2>
   </hgroup>
@@ -871,21 +883,13 @@ Percentage of unit-root ramps using PP: 97.8%</p>
 &ldquo;Classes of Structures in the Stable Atmospheric Boundary Layer (Submitting soon).&rdquo;
 <EM>Quarterly Journal of the Royal Meteorological Society</EM>.</p>
 
-  </article>
-  <!-- Presenter Notes -->
-</slide>
+<h2>Application</h2>
 
-<slide class="" id="slide-47" style="background:;">
-  <hgroup>
-    <h2>Application</h2>
-  </hgroup>
-  <article data-timings="">
-    <ul>
+<ul>
 <li><p>Motivation dataset --- FLOSS (<a href="">Mahrt (2011)</a>)</p>
 
 <ul>
-<li>130 nights</li>
-<li>9h per night</li>
+<li>130 nights; 9h per night</li>
 <li>6s averaged</li>
 <li>\(l=702000\)</li>
 </ul></li>
@@ -898,7 +902,7 @@ Percentage of unit-root ramps using PP: 97.8%</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-48" style="background:;">
+<slide class="" id="slide-46" style="background:;">
   <hgroup>
     <h2>FLOSS events and clustering</h2>
   </hgroup>
@@ -913,7 +917,7 @@ Percentage of unit-root ramps using PP: 97.8%</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-49" style="background:;">
+<slide class="" id="slide-47" style="background:;">
   <hgroup>
     <h2>FLOSS event cluster prototypes</h2>
   </hgroup>
@@ -935,7 +939,7 @@ Percentage of unit-root ramps using PP: 97.8%</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-50" style="background:;">
+<slide class="" id="slide-48" style="background:;">
   <hgroup>
     <h2>FLOSS events: physical characteristics</h2>
   </hgroup>
@@ -970,7 +974,7 @@ Percentage of unit-root ramps using PP: 97.8%</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-51" style="background:;">
+<slide class="" id="slide-49" style="background:;">
   <hgroup>
     <h2>FLOSS events: physical characteristics</h2>
   </hgroup>
@@ -983,7 +987,7 @@ Percentage of unit-root ramps using PP: 97.8%</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-52" style="background:;">
+<slide class="" id="slide-50" style="background:;">
   <hgroup>
     <h2>FLOSS events: physical characteristics</h2>
   </hgroup>
@@ -1007,9 +1011,9 @@ Percentage of unit-root ramps using PP: 97.8%</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-53" style="background:;">
+<slide class="" id="slide-51" style="background:;">
   <hgroup>
-    <h2>FLOSS events: deep and shallow events</h2>
+    <h2>FLOSS events: deep (shallow) events</h2>
   </hgroup>
   <article data-timings="">
     
@@ -1033,7 +1037,7 @@ Percentage of unit-root ramps using PP: 97.8%</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-54" style="background:;">
+<slide class="" id="slide-52" style="background:;">
   <hgroup>
     <h2>FLOSS events: eg1 and eg2</h2>
   </hgroup>
@@ -1041,13 +1045,13 @@ Percentage of unit-root ramps using PP: 97.8%</p>
     
 <div style='float:left;width:w1;' class='centered'>
   <div>
-<img src="Cl1eg.pdf" height="580" width="400">
+<img src="Cl1eg1.pdf" height="580" width="400">
 </div>
 
 </div>
 <div style='float:right;width:w2;'>
   <div>
-<img src="Cl2eg.pdf" height="580" width="400">
+<img src="Cl2eg2.pdf" height="580" width="400">
 </div>
 
 </div>
@@ -1055,7 +1059,7 @@ Percentage of unit-root ramps using PP: 97.8%</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-55" style="background:;">
+<slide class="" id="slide-53" style="background:;">
   <hgroup>
     <h2>FLOSS events: eg3 and hodograph</h2>
   </hgroup>
@@ -1063,7 +1067,7 @@ Percentage of unit-root ramps using PP: 97.8%</p>
     
 <div style='float:left;width:w1;' class='centered'>
   <div>
-<img src="Cl3eg.pdf" height="580" width="400">
+<img src="Cl3eg3.pdf" height="580" width="400">
 </div>
 
 </div>
@@ -1077,7 +1081,7 @@ Percentage of unit-root ramps using PP: 97.8%</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-56" style="background:#f5f5ae;">
+<slide class="" id="slide-54" style="background:#f5f5ae;">
   <hgroup>
     <h2>Chapter 7</h2>
   </hgroup>
@@ -1095,7 +1099,7 @@ Percentage of unit-root ramps using PP: 97.8%</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-57" style="background:#f5f5ae;">
+<slide class="" id="slide-55" style="background:#f5f5ae;">
   <hgroup>
     <h2>Conclusion</h2>
   </hgroup>
@@ -1106,7 +1110,7 @@ Percentage of unit-root ramps using PP: 97.8%</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-58" style="background:#f5f5ae;">
+<slide class="" id="slide-56" style="background:#f5f5ae;">
   <hgroup>
     <h2>Conclusion</h2>
   </hgroup>
@@ -1121,7 +1125,7 @@ Percentage of unit-root ramps using PP: 97.8%</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-59" style="background:;">
+<slide class="" id="slide-57" style="background:;">
   <hgroup>
     <h2>References</h2>
   </hgroup>
@@ -1152,7 +1156,7 @@ IEEE.</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-60" style="background:;">
+<slide class="" id="slide-58" style="background:;">
   <hgroup>
     <h2>References</h2>
   </hgroup>
@@ -1185,7 +1189,7 @@ IEEE.</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-61" style="background:;">
+<slide class="" id="slide-59" style="background:;">
   <article data-timings="">
     <p><center></p>
 
@@ -1255,25 +1259,25 @@ IEEE.</p>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=9 title='Chapter 3'>
+        data-slide=9 title='Coherent structures = phase correlated ?'>
          9
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=10 title='Not really! Why?'>
+        data-slide=10 title='Surrogates of \(x_O(t)\)'>
          10
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=11 title='Surrogates of \(x_O(t)\)'>
+        data-slide=11 title='Measure of phase correlation I'>
          11
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=12 title='Measure of phase correlation I'>
+        data-slide=12 title='Measure of phase correlation II'>
          12
       </a>
     </li>
@@ -1285,217 +1289,217 @@ IEEE.</p>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=14 title='Measure of phase correlation II'>
+        data-slide=14 title='Results'>
          14
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=15 title='Results'>
+        data-slide=15 title='Conclusion 3'>
          15
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=16 title='Conclusion'>
+        data-slide=16 title='Chapter 4'>
          16
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=17 title='Chapter 4'>
+        data-slide=17 title='Artificial time series'>
          17
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=18 title='Chapter 4'>
+        data-slide=18 title='Methodology: two steps'>
          18
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=19 title='Artificial time series'>
+        data-slide=19 title='$1$st step: event detection'>
          19
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=20 title='Methodology: two steps'>
+        data-slide=20 title='\(p\)-value series for the artificial data'>
          20
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=21 title='$1$st step: event detection'>
+        data-slide=21 title='How to define events?'>
          21
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=22 title='\(p\)-value series for the artificial data'>
+        data-slide=22 title='Showing how it works'>
          22
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=23 title='How to define events?'>
+        data-slide=23 title='Events extracted'>
          23
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=24 title='Showing how it works'>
+        data-slide=24 title='Robust to noise?'>
          24
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=25 title='Events extracted'>
+        data-slide=25 title='2nd step: event classification'>
          25
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=26 title='Robust to noise?'>
+        data-slide=26 title='2nd step: event classification (GFQ)'>
          26
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=27 title='2nd step: event classification'>
+        data-slide=27 title='Conclusion 4'>
          27
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=28 title='Comparison with literature'>
+        data-slide=28 title='Chapter 5'>
          28
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=29 title='Chapter 5'>
+        data-slide=29 title='Motivation'>
          29
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=30 title='Chapter 5'>
+        data-slide=30 title='Three cases of the unit root test'>
          30
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=31 title='Motivation'>
+        data-slide=31 title='PP Unit Root Test'>
          31
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=32 title='Three cases of the unit root test'>
+        data-slide=32 title='Why PP?'>
          32
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=33 title='PP Unit Root Test'>
+        data-slide=33 title='Example: PP test'>
          33
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=34 title='Why PP?'>
+        data-slide=34 title='Problem'>
          34
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=35 title='Example: random walks'>
+        data-slide=35 title='Structure breaks'>
          35
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=36 title='Example: stationary'>
+        data-slide=36 title='ZA test'>
          36
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=37 title='Problem'>
+        data-slide=37 title='ZA test example'>
          37
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=38 title='Structure breaks'>
+        data-slide=38 title='The improved method'>
          38
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=39 title='ZA test'>
+        data-slide=39 title='Comparison with literature'>
          39
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=40 title='ZA test example'>
+        data-slide=40 title='Using the method'>
          40
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=41 title='The improved method'>
+        data-slide=41 title='Event detection and clustering'>
          41
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=42 title='Comparison with literature'>
+        data-slide=42 title='Clustering'>
          42
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=43 title='Using the method'>
+        data-slide=43 title='Physical behaviors'>
          43
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=44 title='Event detection and clustering'>
+        data-slide=44 title='Conclusion 5'>
          44
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=45 title='Physical behaviors'>
+        data-slide=45 title='Chapter 6'>
          45
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=46 title='Chapter 6'>
+        data-slide=46 title='FLOSS events and clustering'>
          46
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=47 title='Application'>
+        data-slide=47 title='FLOSS event cluster prototypes'>
          47
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=48 title='FLOSS events and clustering'>
+        data-slide=48 title='FLOSS events: physical characteristics'>
          48
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=49 title='FLOSS event cluster prototypes'>
+        data-slide=49 title='FLOSS events: physical characteristics'>
          49
       </a>
     </li>
@@ -1507,68 +1511,56 @@ IEEE.</p>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=51 title='FLOSS events: physical characteristics'>
+        data-slide=51 title='FLOSS events: deep (shallow) events'>
          51
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=52 title='FLOSS events: physical characteristics'>
+        data-slide=52 title='FLOSS events: eg1 and eg2'>
          52
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=53 title='FLOSS events: deep and shallow events'>
+        data-slide=53 title='FLOSS events: eg3 and hodograph'>
          53
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=54 title='FLOSS events: eg1 and eg2'>
+        data-slide=54 title='Chapter 7'>
          54
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=55 title='FLOSS events: eg3 and hodograph'>
+        data-slide=55 title='Conclusion'>
          55
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=56 title='Chapter 7'>
+        data-slide=56 title='Conclusion'>
          56
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=57 title='Conclusion'>
+        data-slide=57 title='References'>
          57
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=58 title='Conclusion'>
+        data-slide=58 title='References'>
          58
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=59 title='References'>
+        data-slide=59 title=''>
          59
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=60 title='References'>
-         60
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=61 title=''>
-         61
       </a>
     </li>
   </ul>
