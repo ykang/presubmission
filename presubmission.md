@@ -137,7 +137,7 @@ IEEE.
 
 ---
 ## Measure of phase correlation I
-### Coherece index ($CI$)
+### Coherence index ($CI$)
 
 Given $x_O(t)$, $x_R(t)$ and $x_C(t)$,
 
@@ -375,7 +375,6 @@ Then given a window length,  for the $q$th subsequence, get $p$-value $p_q$. For
 
 - Pratical problems: 
   - non-stationarity
-  - turbulence intermittency
 - AR(1) modelling --- stationarity
 - Phillips-Perron (PP) Unit Root Test (<a href="">Perron (1988)</a>)
 
@@ -413,27 +412,26 @@ $$ H_1: \pi < 0 \text{ (stationary)}$$
 - $\pi=0$ means  $\phi=1$ (unit root).
 
 
----
-
-## Why PP?
-
-- `adf.test` (test for unit root) 
-- `kpss.test` (test for stationarity)
-<img src="assets/fig/whypp.pdf" title="plot of chunk whypp" alt="plot of chunk whypp" style="display: block; margin: auto;" />
-
 
 ---
 
 
-## Example: PP test
+## Example: PP test on random walks
 
 <img src="assets/fig/rw.pdf" title="plot of chunk rw" alt="plot of chunk rw" style="display: block; margin: auto;" />
 
 
 ---
+
+
+## Example: PP test on stationary
+<img src="assets/fig/stationary.pdf" title="plot of chunk stationary" alt="plot of chunk stationary" style="display: block; margin: auto;" />
+
+
+---
 ## Problem
 
- Difficult to statistically distinguish between an I(1)–series (e.g.  $X_t = X_{t-1} + u_t$) from a stable I(0) that is contaminated by a structrual shift, for example:
+ Difficult to statistically distinguish between random walk processes from a stationary process contaminated by a structrual break, for example:
 
  $$
 \begin{aligned}
@@ -640,38 +638,16 @@ Percentage of unit-root processes using ZA: 1%
 <img src="centroid.pdf" height="550" width="450">
 </div>
 
----
-## FLOSS events: physical characteristics
-
-</br>
-
-<center>
-
- Ri bins | Percentage of events
-:------------------|:------------:
- Ri <= 0.25 | 19.1%
- 0.25 < Ri < 1 | 42.0%
- Ri >= 1 | 23.5%
-
-</center>
-
----
-## FLOSS events: physical characteristics
-
-<div align="center">
-<img src="boxplots.pdf" height="550" width="400">
-</div>
 
 --- &twocol w1:50% w2:50%
 ## FLOSS events: physical characteristics
 *** =left
 <div>
-<img src="boxplots_profiles_1.pdf" height="580" width="400">
+<img src="boxplots.pdf" height="580" width="400">
 </div>
 *** =right
-</br>
 <div>
-<img src="boxplots_profiles_2.pdf" height="460" width="400">
+<img src="boxplots_profiles_1.pdf" height="580" width="400">
 </div>
 
 --- &twocol w1:60% w2:40%
@@ -688,22 +664,9 @@ Percentage of unit-root processes using ZA: 1%
 <img src="deep_and_shallow_shear.pdf" height="400" width="400">
 </div>
 
---- &twocol w1:50% w2:50%
-## FLOSS events: eg1 and eg2
-
-*** =left
-
-<div>
-<img src="Cl1eg1.pdf" height="580" width="400">
-</div>
-*** =right
-
-<div>
-<img src="Cl2eg2.pdf" height="580" width="400">
-</div>
 
 --- &twocol w1:50% w2:50%
-## FLOSS events: eg3 and hodograph
+## FLOSS events: an example and its hodograph
 
 *** =left
 
@@ -711,9 +674,11 @@ Percentage of unit-root processes using ZA: 1%
 <img src="Cl3eg3.pdf" height="580" width="400">
 </div>
 *** =right
-
+<br>
+<br>
+<br>
 <div>
-<img src="hodograph.pdf" height="250" width="500">
+<img src="hodograph.pdf" height="360" width="380">
 </div>
 
 
@@ -730,9 +695,6 @@ Percentage of unit-root processes using ZA: 1%
 
 - https://github.com/ykang/TED
 
---- bg:#f5f5ae
-## Conclusion
-### Event detection, classification and interpretation in turbulence.
 
 --- bg:#f5f5ae
 ## Conclusion

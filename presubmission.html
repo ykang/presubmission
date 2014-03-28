@@ -242,7 +242,7 @@ IEEE.</p>
     <h2>Measure of phase correlation I</h2>
   </hgroup>
   <article data-timings="">
-    <h3>Coherece index (\(CI\))</h3>
+    <h3>Coherence index (\(CI\))</h3>
 
 <p>Given \(x_O(t)\), \(x_R(t)\) and \(x_C(t)\),</p>
 
@@ -572,7 +572,6 @@ IEEE.</p>
 
 <ul>
 <li>non-stationarity</li>
-<li>turbulence intermittency</li>
 </ul></li>
 <li>AR(1) modelling --- stationarity</li>
 <li>Phillips-Perron (PP) Unit Root Test (<a href="">Perron (1988)</a>)</li>
@@ -631,14 +630,10 @@ IEEE.</p>
 
 <slide class="" id="slide-32" style="background:;">
   <hgroup>
-    <h2>Why PP?</h2>
+    <h2>Example: PP test on random walks</h2>
   </hgroup>
   <article data-timings="">
-    <ul>
-<li><code>adf.test</code> (test for unit root) </li>
-<li><code>kpss.test</code> (test for stationarity)
-<img src="assets/fig/whypp.pdf" title="plot of chunk whypp" alt="plot of chunk whypp" style="display: block; margin: auto;" /></li>
-</ul>
+    <p><img src="assets/fig/rw.pdf" title="plot of chunk rw" alt="plot of chunk rw" style="display: block; margin: auto;" /></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -646,10 +641,10 @@ IEEE.</p>
 
 <slide class="" id="slide-33" style="background:;">
   <hgroup>
-    <h2>Example: PP test</h2>
+    <h2>Example: PP test on stationary</h2>
   </hgroup>
   <article data-timings="">
-    <p><img src="assets/fig/rw.pdf" title="plot of chunk rw" alt="plot of chunk rw" style="display: block; margin: auto;" /></p>
+    <p><img src="assets/fig/stationary.pdf" title="plot of chunk stationary" alt="plot of chunk stationary" style="display: block; margin: auto;" /></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -660,7 +655,7 @@ IEEE.</p>
     <h2>Problem</h2>
   </hgroup>
   <article data-timings="">
-    <p>Difficult to statistically distinguish between an I(1)–series (e.g.  \(X_t = X_{t-1} + u_t\)) from a stable I(0) that is contaminated by a structrual shift, for example:</p>
+    <p>Difficult to statistically distinguish between random walk processes from a stationary process contaminated by a structrual break, for example:</p>
 
 <p>\[
 \begin{aligned}
@@ -944,74 +939,24 @@ Percentage of unit-root processes using PP: 97.8%</p>
     <h2>FLOSS events: physical characteristics</h2>
   </hgroup>
   <article data-timings="">
-    <p></br></p>
-
-<p><center></p>
-
-<table><thead>
-<tr>
-<th align="left">Ri bins</th>
-<th align="center">Percentage of events</th>
-</tr>
-</thead><tbody>
-<tr>
-<td align="left">Ri &lt;= 0.25</td>
-<td align="center">19.1%</td>
-</tr>
-<tr>
-<td align="left">0.25 &lt; Ri &lt; 1</td>
-<td align="center">42.0%</td>
-</tr>
-<tr>
-<td align="left">Ri &gt;= 1</td>
-<td align="center">23.5%</td>
-</tr>
-</tbody></table>
-
-<p></center></p>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-49" style="background:;">
-  <hgroup>
-    <h2>FLOSS events: physical characteristics</h2>
-  </hgroup>
-  <article data-timings="">
-    <div align="center">
-<img src="boxplots.pdf" height="550" width="400">
-</div>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-50" style="background:;">
-  <hgroup>
-    <h2>FLOSS events: physical characteristics</h2>
-  </hgroup>
-  <article data-timings="">
     
 <div style='float:left;width:w1;' class='centered'>
+  <div>
+<img src="boxplots.pdf" height="580" width="400">
+</div>
+
+</div>
+<div style='float:right;width:w2;'>
   <div>
 <img src="boxplots_profiles_1.pdf" height="580" width="400">
 </div>
 
 </div>
-<div style='float:right;width:w2;'>
-  <p></br></p>
-
-<div>
-<img src="boxplots_profiles_2.pdf" height="460" width="400">
-</div>
-
-</div>
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-51" style="background:;">
+<slide class="" id="slide-49" style="background:;">
   <hgroup>
     <h2>FLOSS events: deep (shallow) events</h2>
   </hgroup>
@@ -1037,31 +982,9 @@ Percentage of unit-root processes using PP: 97.8%</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-52" style="background:;">
+<slide class="" id="slide-50" style="background:;">
   <hgroup>
-    <h2>FLOSS events: eg1 and eg2</h2>
-  </hgroup>
-  <article data-timings="">
-    
-<div style='float:left;width:w1;' class='centered'>
-  <div>
-<img src="Cl1eg1.pdf" height="580" width="400">
-</div>
-
-</div>
-<div style='float:right;width:w2;'>
-  <div>
-<img src="Cl2eg2.pdf" height="580" width="400">
-</div>
-
-</div>
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-53" style="background:;">
-  <hgroup>
-    <h2>FLOSS events: eg3 and hodograph</h2>
+    <h2>FLOSS events: an example and its hodograph</h2>
   </hgroup>
   <article data-timings="">
     
@@ -1072,8 +995,12 @@ Percentage of unit-root processes using PP: 97.8%</p>
 
 </div>
 <div style='float:right;width:w2;'>
-  <div>
-<img src="hodograph.pdf" height="250" width="500">
+  <p><br>
+<br>
+<br></p>
+
+<div>
+<img src="hodograph.pdf" height="360" width="380">
 </div>
 
 </div>
@@ -1081,7 +1008,7 @@ Percentage of unit-root processes using PP: 97.8%</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-54" style="background:#f5f5ae;">
+<slide class="" id="slide-51" style="background:#f5f5ae;">
   <hgroup>
     <h2>Chapter 7</h2>
   </hgroup>
@@ -1099,18 +1026,7 @@ Percentage of unit-root processes using PP: 97.8%</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-55" style="background:#f5f5ae;">
-  <hgroup>
-    <h2>Conclusion</h2>
-  </hgroup>
-  <article data-timings="">
-    <h3>Event detection, classification and interpretation in turbulence.</h3>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-56" style="background:#f5f5ae;">
+<slide class="" id="slide-52" style="background:#f5f5ae;">
   <hgroup>
     <h2>Conclusion</h2>
   </hgroup>
@@ -1125,7 +1041,7 @@ Percentage of unit-root processes using PP: 97.8%</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-57" style="background:;">
+<slide class="" id="slide-53" style="background:;">
   <hgroup>
     <h2>References</h2>
   </hgroup>
@@ -1156,7 +1072,7 @@ IEEE.</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-58" style="background:;">
+<slide class="" id="slide-54" style="background:;">
   <hgroup>
     <h2>References</h2>
   </hgroup>
@@ -1189,7 +1105,7 @@ IEEE.</p>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-59" style="background:;">
+<slide class="" id="slide-55" style="background:;">
   <article data-timings="">
     <p><center></p>
 
@@ -1397,13 +1313,13 @@ IEEE.</p>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=32 title='Why PP?'>
+        data-slide=32 title='Example: PP test on random walks'>
          32
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=33 title='Example: PP test'>
+        data-slide=33 title='Example: PP test on stationary'>
          33
       </a>
     </li>
@@ -1499,68 +1415,44 @@ IEEE.</p>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=49 title='FLOSS events: physical characteristics'>
+        data-slide=49 title='FLOSS events: deep (shallow) events'>
          49
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=50 title='FLOSS events: physical characteristics'>
+        data-slide=50 title='FLOSS events: an example and its hodograph'>
          50
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=51 title='FLOSS events: deep (shallow) events'>
+        data-slide=51 title='Chapter 7'>
          51
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=52 title='FLOSS events: eg1 and eg2'>
+        data-slide=52 title='Conclusion'>
          52
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=53 title='FLOSS events: eg3 and hodograph'>
+        data-slide=53 title='References'>
          53
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=54 title='Chapter 7'>
+        data-slide=54 title='References'>
          54
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=55 title='Conclusion'>
+        data-slide=55 title=''>
          55
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=56 title='Conclusion'>
-         56
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=57 title='References'>
-         57
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=58 title='References'>
-         58
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=59 title=''>
-         59
       </a>
     </li>
   </ul>

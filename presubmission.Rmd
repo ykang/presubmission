@@ -141,7 +141,7 @@ print(bib[3],'html')
 
 ---
 ## Measure of phase correlation I
-### Coherece index ($CI$)
+### Coherence index ($CI$)
 
 Given $x_O(t)$, $x_R(t)$ and $x_C(t)$,
 
@@ -406,7 +406,6 @@ print(bib[4],'html')
 
 - Pratical problems: 
   - non-stationarity
-  - turbulence intermittency
 - AR(1) modelling --- stationarity
 - Phillips-Perron (PP) Unit Root Test (`r citet(bib[['perron1988trends']])`)
 
@@ -444,73 +443,15 @@ $$ H_1: \pi < 0 \text{ (stationary)}$$
 - $\pi=0$ means  $\phi=1$ (unit root).
 
 
----
-
-## Why PP?
-
-- `adf.test` (test for unit root) 
-- `kpss.test` (test for stationarity)
-```{r whypp, echo=FALSE,fig.align='center',fig.width=6,fig.height=6,cache=TRUE,dev='pdf'}
-library(doMC)
-library(foreach)
-registerDoMC(cores=8)
-set.seed(123)
-phis=seq(0.6,1,by=0.025)
-n=100
-ppp=foreach(k=1:length(phis),.combine=c)%dopar%{
-  pp=rep(0,1000)
-  for (j in 1:1000){
-phi=phis[k]
-x0=rnorm(1)
-x=rep(NA,n)
-x[1]=a+phi*x0+rnorm(1)
-for (i in 2:n){
-  x[i]=phi*x[i-1]+rnorm(1)
-}
-pp[j]=PP.test(x)$p.value}
-sum(pp>0.05)/1000}
-plot(phis,ppp*100,ty='l',xlab=expression(phi),ylab='Pertentage of non-stationary processes (%)')
-
-set.seed(123)
-pppadf=foreach(k=1:length(phis),.combine=c)%dopar%{
-  pp=rep(0,1000)
-  for (j in 1:1000){
-phi=phis[k]
-x0=rnorm(1)
-x=rep(NA,n)
-x[1]=a+phi*x0+rnorm(1)
-for (i in 2:n){
-  x[i]=phi*x[i-1]+rnorm(1)
-}
-pp[j]=adf.test(x)$p.value}
-sum(pp>0.05)/1000}
-lines(phis,pppadf*100,col=2)
-
-set.seed(123)
-pppkpss=foreach(k=1:length(phis),.combine=c)%dopar%{
-  pp=rep(0,1000)
-  for (j in 1:1000){
-phi=phis[k]
-x0=rnorm(1)
-x=rep(NA,n)
-x[1]=a+phi*x0+rnorm(1)
-for (i in 2:n){
-  x[i]=phi*x[i-1]+rnorm(1)
-}
-pp[j]=kpss.test(x)$p.value}
-sum(pp<0.05)/1000}
-lines(phis,pppkpss*100,col=3)
-legend(.6,96,c("PP","ADF","KPSS"),col=c(1:3),lty=1,lwd=1)
-```
 
 ---
 
 
-## Example: PP test
+## Example: PP test on random walks
 
-```{r rw, echo=FALSE,fig.align='center',fig.width=8,fig.height=8,cache=TRUE,dev='pdf'}
+```{r rw, echo=FALSE,fig.align='center',fig.width=12,fig.height=6,cache=TRUE,dev='pdf'}
 set.seed(123)
-par(mfrow=c(2,2))
+par(mfrow=c(1,2))
 phi=1
 x0=rnorm(1)
 x=rep(NA,1000)
@@ -543,9 +484,15 @@ for (i in 2:1000){
 }
 plot(x,xlab='',ylab=expression(X(t)),ty='l',main=expression(p.value==0.97),col=3)
 legend(0,max(x),col=3,text.col=3,lty=1,c(expression(x[t]==0.1+0.1%*%t+x[t-1]+u[t])))
+```
 
+---
+
+
+## Example: PP test on stationary
+```{r stationary, echo=FALSE,fig.align='center',fig.width=12,fig.height=6,cache=TRUE,dev='pdf'}
 set.seed(123)
-
+par(mfrow=c(1,2))
 phi=0.5
 x0=rnorm(1)*0.1
 x=rep(NA,1000)
@@ -583,7 +530,7 @@ legend(0,max(x),col=3,text.col=3,lty=1,c(expression(x[t]==1+0.1%*%t+0.5%*%x[t-1]
 ---
 ## Problem
 
- Difficult to statistically distinguish between an I(1)–series (e.g.  $X_t = X_{t-1} + u_t$) from a stable I(0) that is contaminated by a structrual shift, for example:
+ Difficult to statistically distinguish between random walk processes from a stationary process contaminated by a structrual break, for example:
 
  $$
 \begin{aligned}
@@ -848,38 +795,16 @@ print(bib[5],'html')
 <img src="centroid.pdf" height="550" width="450">
 </div>
 
----
-## FLOSS events: physical characteristics
-
-</br>
-
-<center>
-
- Ri bins | Percentage of events
-:------------------|:------------:
- Ri <= 0.25 | 19.1%
- 0.25 < Ri < 1 | 42.0%
- Ri >= 1 | 23.5%
-
-</center>
-
----
-## FLOSS events: physical characteristics
-
-<div align="center">
-<img src="boxplots.pdf" height="550" width="400">
-</div>
 
 --- &twocol w1:50% w2:50%
 ## FLOSS events: physical characteristics
 *** =left
 <div>
-<img src="boxplots_profiles_1.pdf" height="580" width="400">
+<img src="boxplots.pdf" height="580" width="400">
 </div>
 *** =right
-</br>
 <div>
-<img src="boxplots_profiles_2.pdf" height="460" width="400">
+<img src="boxplots_profiles_1.pdf" height="580" width="400">
 </div>
 
 --- &twocol w1:60% w2:40%
@@ -896,22 +821,9 @@ print(bib[5],'html')
 <img src="deep_and_shallow_shear.pdf" height="400" width="400">
 </div>
 
---- &twocol w1:50% w2:50%
-## FLOSS events: eg1 and eg2
-
-*** =left
-
-<div>
-<img src="Cl1eg1.pdf" height="580" width="400">
-</div>
-*** =right
-
-<div>
-<img src="Cl2eg2.pdf" height="580" width="400">
-</div>
 
 --- &twocol w1:50% w2:50%
-## FLOSS events: eg3 and hodograph
+## FLOSS events: an example and its hodograph
 
 *** =left
 
@@ -919,9 +831,11 @@ print(bib[5],'html')
 <img src="Cl3eg3.pdf" height="580" width="400">
 </div>
 *** =right
-
+<br>
+<br>
+<br>
 <div>
-<img src="hodograph.pdf" height="250" width="500">
+<img src="hodograph.pdf" height="360" width="380">
 </div>
 
 
@@ -937,9 +851,6 @@ print(bib[6],'html')
 
 - https://github.com/ykang/TED
 
---- bg:#f5f5ae
-## Conclusion
-### Event detection, classification and interpretation in turbulence.
 
 --- bg:#f5f5ae
 ## Conclusion
