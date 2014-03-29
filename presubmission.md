@@ -195,7 +195,15 @@ $$
 
 ---
 ## Results 
-- 1999 Cooperative Atmosphere–Surface Exchange Study (CASES-99) (<a href="">Poulos et al. (2002)</a>).
+- 1999 Cooperative Atmosphere–Surface Exchange Study (CASES-99) (
+
+```
+
+Error in eval(expr, envir, enclos) : could not find function "citet"
+
+```
+
+).
 - 1-s averages of data for one day (252 events)
 <div align="center">
 <img src="hist.pdf" width=800, height=400>
@@ -376,7 +384,15 @@ Then given a window length,  for the $q$th subsequence, get $p$-value $p_q$. For
 - Pratical problems: 
   - non-stationarity
 - AR(1) modelling --- stationarity
-- Phillips-Perron (PP) Unit Root Test (<a href="">Perron (1988)</a>)
+- Phillips-Perron (PP) Unit Root Test (
+
+```
+
+Error in eval(expr, envir, enclos) : could not find function "citet"
+
+```
+
+)
 
 ---
 ## Three cases of the unit root test 
@@ -460,7 +476,15 @@ In the presence of a structural break, the tests are biased towards the non-reje
 
 ## ZA test
 
-A unit root test which considers structure break: Zivot \& Andrews (ZA) unit root test (<a href="">Zivot & Andrews (1992)</a>)
+A unit root test which considers structure break: Zivot \& Andrews (ZA) unit root test (
+
+```
+
+Error in eval(expr, envir, enclos) : could not find function "citet"
+
+```
+
+)
 
 Allow a break in the null and alternative:
 
@@ -516,7 +540,15 @@ Percentage of unit-root processes using ZA: 1%
 ---
 
 ## Comparison with literature
-### This is a comparison with wavelets method (<a href="">Thomas & Foken (2005)</a>).
+### This is a comparison with wavelets method (
+
+```
+
+Error in eval(expr, envir, enclos) : could not find function "citet"
+
+```
+
+).
 
 <div align="center">
 <img src="red.pdf" width=900,height=400>
@@ -529,7 +561,15 @@ Percentage of unit-root processes using ZA: 1%
 
 
 
-- 1999 Cooperative Atmosphere–Surface Exchange Study (CASES-99) (<a href="">Poulos et al. (2002)</a>).
+- 1999 Cooperative Atmosphere–Surface Exchange Study (CASES-99) (
+
+```
+
+Error in eval(expr, envir, enclos) : could not find function "citet"
+
+```
+
+).
 
 - 1-s averages of data from 1100 LST 5 October to 1100 LST 6 October ($l=86400$).
 
@@ -607,7 +647,15 @@ Percentage of unit-root processes using ZA: 1%
 
 ## Application
 
-- Motivation dataset --- FLOSS (<a href="">Mahrt (2011)</a>)
+- Motivation dataset --- FLOSS (
+
+```
+
+Error in eval(expr, envir, enclos) : could not find function "citet"
+
+```
+
+)
 
   - 130 nights; 9h per night
   - 6s averaged
@@ -730,6 +778,11 @@ IEEE.
 
 ---
 ## References
+
+
+```
+## Error: could not find function "read.bib"
+```
 
 <p>Kang Y, Belusic D and Smith-Miles K (2014).
 &ldquo;Detecting Events from Very Noisy Time Series with the R package <span class="pkg">TED</span>  (In preparation).&rdquo;
