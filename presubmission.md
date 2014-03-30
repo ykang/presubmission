@@ -10,20 +10,11 @@ widgets     : mathjax
 mode        : selfcontained # {standalone, draft, selfcontained}
 transition  : fade
 
---- bg:#f5f5ae
+--- 
 
 
 
 
-## Introduction
-
-### - Motivation
-
-### - Difficulties
-
-### - Objectives 
-
----
 ## Motivation
 
 <img src="assets/fig/chunk0.pdf" title="plot of chunk chunk0" alt="plot of chunk chunk0" style="display: block; margin: auto;" />
@@ -56,7 +47,7 @@ transition  : fade
 >2. Application of the method on a well-known dataset
   - also a validation of the method.
 >3. Use the method to
-  - detect events in the generally unknown stable atmospheric boundary layer (ABL).
+  - detect events in the generally unknown stable atmospheric turbulence.
   - find  physical  dynamics of different types of events.
   - study the effects of the event to the turbulence flows.  
 >4. Develop a statistical tool and make it easy to use for others.
@@ -121,19 +112,17 @@ IEEE.
 - Measure their phase correlation.
 - How? By comparison with their surrogates.
 
----
-## Surrogates of $x_O(t)$
+### Surrogates of $x_O(t)$
 
-
-1. phase randomized surrogate $x_R(t)$
+1. phase randomized surrogate $x_R(t)$ (no phase correlation)
   - take the Fourier Transform of $x_O(t)$.
   - randomize phase information while keeping the magnitude.
   - do inverse Fourier Transform to get back to time domain to get $x_R(t)$.
-  - none phase correlation left.
 
-2. completely coherent surrogate $x_C(t)$
+
+2. completely coherent surrogate $x_C(t)$ (largest phase correlation)
   - obtained by making the phases constant.
-  - largest phase correlation
+
 
 ---
 ## Measure of phase correlation I
@@ -195,15 +184,7 @@ $$
 
 ---
 ## Results 
-- 1999 Cooperative Atmosphere–Surface Exchange Study (CASES-99) (
-
-```
-
-Error in eval(expr, envir, enclos) : could not find function "citet"
-
-```
-
-).
+- 1999 Cooperative Atmosphere–Surface Exchange Study (CASES-99) (<a href="">Poulos et al. (2002)</a>).
 - 1-s averages of data for one day (252 events)
 <div align="center">
 <img src="hist.pdf" width=800, height=400>
@@ -215,6 +196,8 @@ Error in eval(expr, envir, enclos) : could not find function "citet"
 
 
 >- the space and time organized structures in turbulent flow do not necessarily have correlated phases.
+
+>- the generally used assumption not always true.
 
 >- quantitative way of event description difficult.
 
@@ -381,33 +364,13 @@ Then given a window length,  for the $q$th subsequence, get $p$-value $p_q$. For
 ---
 ## Motivation
 
-- Pratical problems: 
+- Practical problems: 
   - non-stationarity
 - AR(1) modelling --- stationarity
-- Phillips-Perron (PP) Unit Root Test (
-
-```
-
-Error in eval(expr, envir, enclos) : could not find function "citet"
-
-```
-
-)
-
----
-## Three cases of the unit root test 
-
-- No trend, no drift:
-
-$$X_t=\phi*X_{t-1}+u_t \: (H_0: \phi=1)$$
-
-- No trend, drift 
-
-$$X_t=\delta+\phi*X_{t-1}+u_t \: (H_0: \phi=1)$$
-
-- Trend, drift 
-
-$$X_t=\delta+a+b*t+\phi*X_{t-1}+u_t \: (H_0: \phi=1)$$
+- Phillips-Perron (PP) Unit Root Test (<a href="">Perron (1988)</a>)
+  - No trend, no drift: $X_t=\phi*X_{t-1}+u_t \: (H_0: \phi=1)$
+  - No trend, drift: $X_t=\delta+\phi*X_{t-1}+u_t \: (H_0: \phi=1)$
+  - Trend, drift: $X_t=\delta+a+b*t+\phi*X_{t-1}+u_t \: (H_0: \phi=1)$
 
 ---
 
@@ -415,33 +378,25 @@ $$X_t=\delta+a+b*t+\phi*X_{t-1}+u_t \: (H_0: \phi=1)$$
 
 
 
-$$\triangle X_t=\beta' D_t+\pi*X_{t-1}+u_t,$$
+$$X_t = \beta*D_t + \phi*X_{t-1}+u_t,$$
 
 
-$$ H_0: \pi = 0 \text{ (unit root)}$$ 
-$$ H_1: \pi < 0 \text{ (stationary)}$$
+$$ H_0: \phi = 1 \text{ (unit root)}$$ 
+$$ H_1: \phi < 1 \text{ (stationary)}$$
 
 
 
 - Drift and deterministic trend are considered in $D_t$.
-- $X_t = \phi*X_{t-1}+u_t$.
-- $\pi=0$ means  $\phi=1$ (unit root).
+
 
 
 
 ---
 
 
-## Example: PP test on random walks
+## Example: PP test 
 
 <img src="assets/fig/rw.pdf" title="plot of chunk rw" alt="plot of chunk rw" style="display: block; margin: auto;" />
-
-
----
-
-
-## Example: PP test on stationary
-<img src="assets/fig/stationary.pdf" title="plot of chunk stationary" alt="plot of chunk stationary" style="display: block; margin: auto;" />
 
 
 ---
@@ -476,15 +431,7 @@ In the presence of a structural break, the tests are biased towards the non-reje
 
 ## ZA test
 
-A unit root test which considers structure break: Zivot \& Andrews (ZA) unit root test (
-
-```
-
-Error in eval(expr, envir, enclos) : could not find function "citet"
-
-```
-
-)
+A unit root test which considers structure break: Zivot \& Andrews (ZA) unit root test (<a href="">Zivot & Andrews (1992)</a>)
 
 Allow a break in the null and alternative:
 
@@ -540,15 +487,7 @@ Percentage of unit-root processes using ZA: 1%
 ---
 
 ## Comparison with literature
-### This is a comparison with wavelets method (
-
-```
-
-Error in eval(expr, envir, enclos) : could not find function "citet"
-
-```
-
-).
+### This is a comparison with wavelets method (<a href="">Thomas & Foken (2005)</a>).
 
 <div align="center">
 <img src="red.pdf" width=900,height=400>
@@ -561,15 +500,7 @@ Error in eval(expr, envir, enclos) : could not find function "citet"
 
 
 
-- 1999 Cooperative Atmosphere–Surface Exchange Study (CASES-99) (
-
-```
-
-Error in eval(expr, envir, enclos) : could not find function "citet"
-
-```
-
-).
+- 1999 Cooperative Atmosphere–Surface Exchange Study (CASES-99) (<a href="">Poulos et al. (2002)</a>).
 
 - 1-s averages of data from 1100 LST 5 October to 1100 LST 6 October ($l=86400$).
 
@@ -577,28 +508,27 @@ Error in eval(expr, envir, enclos) : could not find function "citet"
 
  
 
---- 
+--- &twocol w1:40% w2:60%
 
 ## Event detection and clustering 
 
-### 102 events detected and clustered using:
-
+*** =left
+### 102 events clustered using:
+  - `sd`
+  - `Kurtosis`
+  - `Skewness`
   - `non-smoothness`: $\frac{\text{sd}(\text{diff}(x))}{\text{mean(diff}(x)}$
   - `diff kurtosis`:  kurtosis of diff($x$)
   - `diff Max`: $\text{max}(\text{diff}(x,\text{lag}=5))$
   - `diff Min`: $\text{min}(\text{diff}(x,\text{lag}=5))$
-  - `sd`: measured in the same way as in the artificial time series
-  - `Kurtosis`: measured in the same way as before
-  - `Skewness`: measured in the same way as before
-  - `Peroid`:  measured in the same way as before
+  - `Peroid`
+  
 
 
----
-
-## Clustering
-
+*** =right
+### Clustering
 <div align='center'>
-<img src='Heatmap.pdf' width=700, height=550>
+<img src='Heatmap.pdf' width=500, height=400>
 </div>
 
 --- &twocol w1:50% w2:50%
@@ -647,15 +577,7 @@ Error in eval(expr, envir, enclos) : could not find function "citet"
 
 ## Application
 
-- Motivation dataset --- FLOSS (
-
-```
-
-Error in eval(expr, envir, enclos) : could not find function "citet"
-
-```
-
-)
+- Motivation dataset --- FLOSS (<a href="">Mahrt (2011)</a>)
 
   - 130 nights; 9h per night
   - 6s averaged
@@ -667,24 +589,23 @@ Error in eval(expr, envir, enclos) : could not find function "citet"
 
 - Few studies on detailed physical analysis.
 
----
+--- &twocol w1:50% w2:50%
 ## FLOSS events and clustering
-### 926 events detected and grouped into 3 clusters.
+
+*** =left
+
+### 926 events grouped into 3 clusters
 
 <div align="center">
-<img src="pca_plot.pdf">
+<img src="pca_plot.pdf" height=500 width=500>
 </div>
 
---- &twocol w1:50% w2:50%
-## FLOSS event cluster prototypes
-*** =left
-<div>
+*** =right
+
+<div align='center'>
 <img src="prototypes.pdf" height="600" width="400">
 </div>
-*** =right
-<div>
-<img src="centroid.pdf" height="550" width="450">
-</div>
+
 
 
 --- &twocol w1:50% w2:50%
@@ -778,11 +699,6 @@ IEEE.
 
 ---
 ## References
-
-
-```
-## Error: could not find function "read.bib"
-```
 
 <p>Kang Y, Belusic D and Smith-Miles K (2014).
 &ldquo;Detecting Events from Very Noisy Time Series with the R package <span class="pkg">TED</span>  (In preparation).&rdquo;

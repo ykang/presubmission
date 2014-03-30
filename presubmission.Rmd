@@ -10,7 +10,7 @@ widgets     : mathjax
 mode        : selfcontained # {standalone, draft, selfcontained}
 transition  : fade
 
---- bg:#f5f5ae
+--- 
 
 ```{r preload, echo=FALSE,message=FALSE,comment=FALSE,tidy=TRUE,results='hide'}
 setwd('~/Documents/Meetings_2012/Rfunctions')
@@ -18,15 +18,6 @@ file.sources = list.files(pattern="*.R")
 sapply(file.sources,source)
 ```
 
-## Introduction
-
-### - Motivation
-
-### - Difficulties
-
-### - Objectives 
-
----
 ## Motivation
 
 ``` {r chunk0,fig.align='center',cache=TRUE,message=FALSE,echo=FALSE,fig.height=4,fig.width=10,dev='pdf'}
@@ -62,7 +53,7 @@ lines(c(78900:b[97]),CASES99T7[78900:b[97]]+273,col="#ff53a9")
 >2. Application of the method on a well-known dataset
   - also a validation of the method.
 >3. Use the method to
-  - detect events in the generally unknown stable atmospheric boundary layer (ABL).
+  - detect events in the generally unknown stable atmospheric turbulence.
   - find  physical  dynamics of different types of events.
   - study the effects of the event to the turbulence flows.  
 >4. Develop a statistical tool and make it easy to use for others.
@@ -125,19 +116,17 @@ print(bib[3],'html')
 - Measure their phase correlation.
 - How? By comparison with their surrogates.
 
----
-## Surrogates of $x_O(t)$
+### Surrogates of $x_O(t)$
 
-
-1. phase randomized surrogate $x_R(t)$
+1. phase randomized surrogate $x_R(t)$ (no phase correlation)
   - take the Fourier Transform of $x_O(t)$.
   - randomize phase information while keeping the magnitude.
   - do inverse Fourier Transform to get back to time domain to get $x_R(t)$.
-  - none phase correlation left.
 
-2. completely coherent surrogate $x_C(t)$
+
+2. completely coherent surrogate $x_C(t)$ (largest phase correlation)
   - obtained by making the phases constant.
-  - largest phase correlation
+
 
 ---
 ## Measure of phase correlation I
@@ -211,6 +200,8 @@ $$
 
 
 >- the space and time organized structures in turbulent flow do not necessarily have correlated phases.
+
+>- the generally used assumption not always true.
 
 >- quantitative way of event description difficult.
 
@@ -404,25 +395,13 @@ print(bib[4],'html')
 ---
 ## Motivation
 
-- Pratical problems: 
+- Practical problems: 
   - non-stationarity
 - AR(1) modelling --- stationarity
 - Phillips-Perron (PP) Unit Root Test (`r citet(bib[['perron1988trends']])`)
-
----
-## Three cases of the unit root test 
-
-- No trend, no drift:
-
-$$X_t=\phi*X_{t-1}+u_t \: (H_0: \phi=1)$$
-
-- No trend, drift 
-
-$$X_t=\delta+\phi*X_{t-1}+u_t \: (H_0: \phi=1)$$
-
-- Trend, drift 
-
-$$X_t=\delta+a+b*t+\phi*X_{t-1}+u_t \: (H_0: \phi=1)$$
+  - No trend, no drift: $X_t=\phi*X_{t-1}+u_t \: (H_0: \phi=1)$
+  - No trend, drift: $X_t=\delta+\phi*X_{t-1}+u_t \: (H_0: \phi=1)$
+  - Trend, drift: $X_t=\delta+a+b*t+\phi*X_{t-1}+u_t \: (H_0: \phi=1)$
 
 ---
 
@@ -430,28 +409,27 @@ $$X_t=\delta+a+b*t+\phi*X_{t-1}+u_t \: (H_0: \phi=1)$$
 
 
 
-$$\triangle X_t=\beta' D_t+\pi*X_{t-1}+u_t,$$
+$$X_t = \beta*D_t + \phi*X_{t-1}+u_t,$$
 
 
-$$ H_0: \pi = 0 \text{ (unit root)}$$ 
-$$ H_1: \pi < 0 \text{ (stationary)}$$
+$$ H_0: \phi = 1 \text{ (unit root)}$$ 
+$$ H_1: \phi < 1 \text{ (stationary)}$$
 
 
 
 - Drift and deterministic trend are considered in $D_t$.
-- $X_t = \phi*X_{t-1}+u_t$.
-- $\pi=0$ means  $\phi=1$ (unit root).
+
 
 
 
 ---
 
 
-## Example: PP test on random walks
+## Example: PP test 
 
-```{r rw, echo=FALSE,fig.align='center',fig.width=12,fig.height=6,cache=TRUE,dev='pdf'}
+```{r rw, echo=FALSE,fig.align='center',fig.width=8,fig.height=8,cache=TRUE,dev='pdf'}
 set.seed(123)
-par(mfrow=c(1,2))
+par(mfrow=c(2,2))
 phi=1
 x0=rnorm(1)
 x=rep(NA,1000)
@@ -484,15 +462,8 @@ for (i in 2:1000){
 }
 plot(x,xlab='',ylab=expression(X(t)),ty='l',main=expression(p.value==0.97),col=3)
 legend(0,max(x),col=3,text.col=3,lty=1,c(expression(x[t]==0.1+0.1%*%t+x[t-1]+u[t])))
-```
 
----
-
-
-## Example: PP test on stationary
-```{r stationary, echo=FALSE,fig.align='center',fig.width=12,fig.height=6,cache=TRUE,dev='pdf'}
 set.seed(123)
-par(mfrow=c(1,2))
 phi=0.5
 x0=rnorm(1)*0.1
 x=rep(NA,1000)
@@ -695,28 +666,27 @@ cat('Percentage of unit-root processes using ZA: ',sum(PP4),'%',sep='')
 
  
 
---- 
+--- &twocol w1:40% w2:60%
 
 ## Event detection and clustering 
 
-### 102 events detected and clustered using:
-
+*** =left
+### 102 events clustered using:
+  - `sd`
+  - `Kurtosis`
+  - `Skewness`
   - `non-smoothness`: $\frac{\text{sd}(\text{diff}(x))}{\text{mean(diff}(x)}$
   - `diff kurtosis`:  kurtosis of diff($x$)
   - `diff Max`: $\text{max}(\text{diff}(x,\text{lag}=5))$
   - `diff Min`: $\text{min}(\text{diff}(x,\text{lag}=5))$
-  - `sd`: measured in the same way as in the artificial time series
-  - `Kurtosis`: measured in the same way as before
-  - `Skewness`: measured in the same way as before
-  - `Peroid`:  measured in the same way as before
+  - `Peroid`
+  
 
 
----
-
-## Clustering
-
+*** =right
+### Clustering
 <div align='center'>
-<img src='Heatmap.pdf' width=700, height=550>
+<img src='Heatmap.pdf' width=500, height=400>
 </div>
 
 --- &twocol w1:50% w2:50%
@@ -776,24 +746,23 @@ print(bib[5],'html')
 
 - Few studies on detailed physical analysis.
 
----
+--- &twocol w1:50% w2:50%
 ## FLOSS events and clustering
-### 926 events detected and grouped into 3 clusters.
+
+*** =left
+
+### 926 events grouped into 3 clusters
 
 <div align="center">
-<img src="pca_plot.pdf">
+<img src="pca_plot.pdf" height=500 width=500>
 </div>
 
---- &twocol w1:50% w2:50%
-## FLOSS event cluster prototypes
-*** =left
-<div>
+*** =right
+
+<div align='center'>
 <img src="prototypes.pdf" height="600" width="400">
 </div>
-*** =right
-<div>
-<img src="centroid.pdf" height="550" width="450">
-</div>
+
 
 
 --- &twocol w1:50% w2:50%
