@@ -70,9 +70,8 @@ In <EM>Proceedings of the 2012 International Joint Conference on Neural Networks
 IEEE.
 
 
-- subsequences
+- growing clustering of subsequences
 - features
-- growing
 - changes
 
 
@@ -204,7 +203,7 @@ $$
 ## Conclusion 3
 
 
->- the generally used assumption not always true.
+>- coherent structures ?= phase correlation..
 
 >- the space and time organized structures in turbulent flow do not necessarily have correlated phases.
 
@@ -291,7 +290,7 @@ Then given a window length,  for the $q$th subsequence, get $p$-value $p_q$. For
   - $p_i\leq \alpha, i=s, s+1, \cdots, t$
   - $t-s\geq w/2$ 
 
-    then we define the subsequence $x_{\left\lfloor\frac{t+s}{2}\right\rfloor}(t)$ as <span style=" border: 1px solid red;">*the event*</span> we are interested in.
+    then we define the subsequence $x_{\left\lfloor\frac{t+s}{2}\right\rfloor}(t)$ as <span style=" border: 1px solid red;">*the event*</span> for which we are searching.
 
 --- 
 
