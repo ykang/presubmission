@@ -70,6 +70,10 @@ In <EM>Proceedings of the 2012 International Joint Conference on Neural Networks
 IEEE.
 
 
+- subsequences
+- features
+- growing
+- changes
 
 
 --- &twocol

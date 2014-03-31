@@ -75,6 +75,10 @@ bib <- read.bib("copy.bib")
 print(bib[1],'html')
 ```
 
+- subsequences
+- growing
+- features
+- changes
 
 
 --- &twocol
