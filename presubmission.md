@@ -73,16 +73,22 @@ IEEE.
 
 
 --- &twocol
-## An example
+## Examples
 
 *** =left
-<div>
-<img src='nile.png' width=460,height=450>
+<div align='right'>
+<img src='art1.png' width=380,height=380>
+</div>
+<div align='right'>
+<img src='nile.png' width=380,height=380>
 </div>
 
 *** =right
-<div>
-<img src='nileD.png' width=460,height=450>
+<div align='left'>
+<img src='art2.png' width=380,height=380>
+</div>
+<div align='left'>
+<img src='seatbelt.png' width=380,height=380>
 </div>
 
 
@@ -194,10 +200,9 @@ $$
 ## Conclusion 3
 
 
+>- the generally used assumption not always true.
 
 >- the space and time organized structures in turbulent flow do not necessarily have correlated phases.
-
->- the generally used assumption not always true.
 
 >- quantitative way of event description difficult.
 
