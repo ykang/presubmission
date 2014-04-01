@@ -407,7 +407,7 @@ print(bib[4],'html')
 ---
 ## Motivation
 
-- Practical problems: 
+- Practical problem: 
   - non-stationarity
 - AR(1) modelling --- stationarity
 - Phillips-Perron (PP) Unit Root Test (`r citet(bib[['perron1988trends']])`)
@@ -429,7 +429,7 @@ $$ H_1: \phi < 1 \text{ (stationary)}$$
 
 
 
-- Drift and deterministic trend are considered in $D_t$.
+- Drift and  trend are considered in $D_t$.
 
 
 
@@ -591,33 +591,38 @@ $$
 
 *** =left
 
-```{r pp, echo=FALSE,fig.align='center',fig.width=4.1,fig.height=8,cache=TRUE,dev='pdf'}
-par(mfrow=c(2,1))
-PP1=rep(NA,1000)
-for (i in 1:1000){
-  x=c(rep(0,64)+arima.sim(list(order = c(1,0,0),ar=0.1),n=64,sd=1),rep(20,64)+arima.sim(list(order = c(1,0,0),ar=0.1),n=64,sd=1))
-  PP1[i]=PP.test(x)$p.value
+```{r pp, echo=FALSE,fig.align='center',fig.width=4,fig.height=8,cache=TRUE,dev='pdf'}
+par(mfrow=c(3,1))
+PP0=rep(NA,100)
+for (j in 1:100){
+  phi=1
+  x0=rnorm(1)
+  x=rep(NA,120);n=length(x)
+  x[1]=phi*x0+rnorm(1)
+  for (i in 2:n){
+    x[i]=phi*x[i-1]+rnorm(1)
+  }
+  x_za=ur.za.fast(x)
+  PP0[j]=x_za$flag
 }
-plot(x,type='l',main='Step function',xlab='t',ylab=expression(x[t]))
+plot(x,xlab='',ylab=expression(X[t]),ty='l',main='Random walk')
+
 PP2=rep(NA,100)
 for (i in 1:100){
   x=c(rep(0,64)+arima.sim(list(order = c(1,0,0),ar=0.5),n=64,sd=1),rep(20,64)+arima.sim(list(order = c(1,0,0),ar=0.5),n=64,sd=1))
   x_za=ur.za.fast(x)
-  PP2[i]=(x_za@teststat>x_za@cval[2])
+  PP2[i]=x_za$flag
 }
+plot(x,type='l',main='Step function',xlab='t',ylab=expression(x[t]))
 
-PP3=rep(NA,1000)
-for (i in 1:1000){
-  x=cbf_red('b',0.5,1,20)
-  PP3[i]=PP.test(x)$p.value
-}
-plot(x,type='l',main='Ramp function',xlab='t',ylab=expression(x[t]))
+
 PP4=rep(NA,100)
 for (i in 1:100){
-  x=cbf_red('b',0.5,1,20)
+  x=cbfs_red('cr',20,1,0.5)
   x_za=ur.za.fast(x)
-  PP4[i]=(x_za@teststat>x_za@cval[2])
+  PP4[i]=x_za$flag
 }
+plot(x,type='l',main='Ramp function',xlab='t',ylab=expression(x[t]))
 ```
 
 *** =right
@@ -626,20 +631,20 @@ for (i in 1:100){
 </br>
 
 
-```{r za, echo=FALSE,fig.align='center',fig.width=5,fig.height=5,cache=TRUE,results='asis'}
-cat('Percentage of unit-root processes using PP: ',sum(PP1>0.05)/10,'%',sep='')
-```
 ```{r za1, echo=FALSE,fig.align='center',fig.width=5,fig.height=5,cache=TRUE,results='asis'}
+cat('Percentage of unit-root processes using ZA: ',sum(PP0),'%',sep='')
+```
+</br>
+</br>
+</br>
+</br>
+```{r step_za1, echo=FALSE,fig.align='center',fig.width=9,fig.height=5,cache=TRUE,results='asis'}
 cat('Percentage of unit-root processes using ZA: ',sum(PP2),'%',sep='')
 ```
 </br>
 </br>
 </br>
 </br>
-</br>
-```{r ramp_za, echo=FALSE,fig.align='center',fig.width=9,fig.height=5,cache=TRUE,results='asis'}
-cat('Percentage of unit-root processes using PP: ',sum(PP3>0.05)/10,'%',sep='')
-```
 ```{r ramp_za1, echo=FALSE,fig.align='center',fig.width=9,fig.height=5,cache=TRUE,results='asis'}
 cat('Percentage of unit-root processes using ZA: ',sum(PP4),'%',sep='')
 ```

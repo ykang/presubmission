@@ -376,7 +376,7 @@ Then given a window length,  for the $q$th subsequence, get $p$-value $p_q$. For
 ---
 ## Motivation
 
-- Practical problems: 
+- Practical problem: 
   - non-stationarity
 - AR(1) modelling --- stationarity
 - Phillips-Perron (PP) Unit Root Test (<a href="">Perron (1988)</a>)
@@ -398,7 +398,7 @@ $$ H_1: \phi < 1 \text{ (stationary)}$$
 
 
 
-- Drift and deterministic trend are considered in $D_t$.
+- Drift and  trend are considered in $D_t$.
 
 
 
@@ -472,17 +472,18 @@ $$
 </br>
 
 
-Percentage of unit-root processes using PP: 100%
+Percentage of unit-root processes using ZA: 93%
 
+</br>
+</br>
+</br>
+</br>
 Percentage of unit-root processes using ZA: 0%
 
 </br>
 </br>
 </br>
 </br>
-</br>
-Percentage of unit-root processes using PP: 97.8%
-
 Percentage of unit-root processes using ZA: 1%
 
 

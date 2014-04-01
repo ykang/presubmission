@@ -9,6 +9,8 @@ emu
 fields
 filehash
 foreach
+forecast
+fracdiff
 fractal
 geoR
 ggplot2
@@ -21,6 +23,8 @@ lattice
 latticeExtra
 maps
 MASS
+mgcv
+nlme
 plyr
 R.matlab
 R.methodsS3
