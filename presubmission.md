@@ -445,11 +445,11 @@ In the presence of a structural break, the tests are biased towards the non-reje
 
 A unit root test which considers structure break: Zivot \& Andrews (ZA) unit root test (<a href="">Zivot & Andrews (1992)</a>)
 
-Allow a break in the null and alternative:
+Allow a break in the null and alternative, e.g.:
 
 $$
 \begin{aligned}
-&\triangle X_t=\pi*X_{t-1}+\theta*DU_t+\sum\limits_{j=1}^p \triangle X_{t-j}+u_t, \\
+&X_t=\phi*X_{t-1}+\theta*DU_t+u_t, \\
 &DU_t = \begin{cases}
   1, & \text{if } t > TB, \\
   0, & \text{otherwise}.

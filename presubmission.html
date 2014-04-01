@@ -654,11 +654,11 @@ IEEE.</p>
   <article data-timings="">
     <p>A unit root test which considers structure break: Zivot &amp; Andrews (ZA) unit root test (<a href="">Zivot &amp; Andrews (1992)</a>)</p>
 
-<p>Allow a break in the null and alternative:</p>
+<p>Allow a break in the null and alternative, e.g.:</p>
 
 <p>\[
 \begin{aligned}
-&\triangle X_t=\pi*X_{t-1}+\theta*DU_t+\sum\limits_{j=1}^p \triangle X_{t-j}+u_t, \\
+&X_t=\phi*X_{t-1}+\theta*DU_t+u_t, \\
 &DU_t = \begin{cases}
   1, & \text{if } t > TB, \\
   0, & \text{otherwise}.

@@ -573,11 +573,11 @@ text(15,5,col=2,c(expression(x[t]==0.13+0.99~x[t-1]+u[t])),cex=1.5)
 
 A unit root test which considers structure break: Zivot \& Andrews (ZA) unit root test (`r citet(bib[['zivot1992further']])`)
 
-Allow a break in the null and alternative:
+Allow a break in the null and alternative, e.g.:
 
 $$
 \begin{aligned}
-&\triangle X_t=\pi*X_{t-1}+\theta*DU_t+\sum\limits_{j=1}^p \triangle X_{t-j}+u_t, \\
+&X_t=\phi*X_{t-1}+\theta*DU_t+u_t, \\
 &DU_t = \begin{cases}
   1, & \text{if } t > TB, \\
   0, & \text{otherwise}.
