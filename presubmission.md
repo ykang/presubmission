@@ -612,7 +612,7 @@ Percentage of unit-root processes using ZA: 1%
 *** =right
 
 <div align='center'>
-<img src="prototypes.pdf" height="600" width="400">
+<img src="prototypes.pdf" height="550" width="400">
 </div>
 
 
@@ -621,11 +621,11 @@ Percentage of unit-root processes using ZA: 1%
 ## FLOSS events: physical characteristics
 *** =left
 <div>
-<img src="boxplots.pdf" height="580" width="400">
+<img src="boxplots.pdf" height="550" width="400">
 </div>
 *** =right
 <div>
-<img src="boxplots_profiles_1.pdf" height="580" width="400">
+<img src="boxplots_profiles_1.pdf" height="550" width="400">
 </div>
 
 --- &twocol w1:60% w2:40%
