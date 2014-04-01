@@ -262,9 +262,13 @@ IEEE.
 
 - Perform  noise test on each subsequence.
 - Why? Only care the non-noise subsequences.
-  - white noise test: Ljung-Box test
-  - red noise test: fit $AR(1)$ model and perform white noise test on the model residuals
-  - $H_0:$ noise
+- white noise test: Ljung-Box test
+- red noise test
+  - red noise: $x(t)=\phi x(t-1)+\epsilon(t),$ where $\phi<1$ and $\epsilon(t)$ is white noise
+  - firstly fit an $AR(1)$ model on the subsequence
+  - perform white noise test on the residuals. 
+  - residuals: white noise?
+- $H_0:$ noise
 
 --- 
 
@@ -586,15 +590,11 @@ Percentage of unit-root processes using ZA: 1%
 ## Application
 
 - Motivation dataset --- FLOSS (<a href="">Mahrt (2011)</a>)
-
   - 130 nights; 9h per night
   - 6s averaged
   - $l=702000$
-
 - Very stable unknown ABL. 
-
 - No published results.
-
 - Few studies on detailed physical analysis.
 
 --- &twocol w1:50% w2:50%
@@ -652,12 +652,11 @@ Percentage of unit-root processes using ZA: 1%
 </div>
 *** =right
 <br>
-<br>
-<br>
 <div>
 <img src="hodograph.pdf" height="360" width="380">
 </div>
-
+- very similar hodograph structures
+- moves between different quadrants
 
 --- bg:#f5f5ae
 ## Chapter 7
